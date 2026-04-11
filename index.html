@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry I — Interactive Course</title>
+<style>
+:root{--bg:#0f1419;--panel:#1a2332;--panel2:#243447;--accent:#5eead4;--accent2:#a78bfa;--text:#e2e8f0;--muted:#94a3b8;--correct:#10b981;--wrong:#ef4444;--border:#334155}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+header{background:linear-gradient(135deg,#1e293b,#0f172a);padding:24px;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:100}
+h1{color:var(--accent);font-size:1.6em}
+.subtitle{color:var(--muted);font-size:.9em;margin-top:4px}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+.layout{display:grid;grid-template-columns:260px 1fr;gap:24px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}}
+nav{background:var(--panel);border-radius:12px;padding:16px;height:fit-content;position:sticky;top:120px}
+nav h3{color:var(--accent2);font-size:.85em;text-transform:uppercase;margin-bottom:10px;letter-spacing:1px}
+.nav-item{padding:10px 12px;border-radius:8px;cursor:pointer;color:var(--muted);font-size:.92em;margin-bottom:4px;transition:.2s;border-left:3px solid transparent}
+.nav-item:hover{background:var(--panel2);color:var(--text)}
+.nav-item.active{background:var(--panel2);color:var(--accent);border-left-color:var(--accent)}
+.progress-bar{height:6px;background:var(--panel2);border-radius:3px;margin-top:12px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .3s}
+main{background:var(--panel);border-radius:12px;padding:32px;min-height:600px}
+.module{display:none}
+.module.active{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{color:var(--accent);margin-bottom:8px;font-size:1.7em}
+.lesson-meta{color:var(--muted);font-size:.85em;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+h3{color:var(--accent2);margin:24px 0 12px;font-size:1.2em}
+p{margin-bottom:12px}
+.concept{background:var(--panel2);border-left:4px solid var(--accent);padding:16px;border-radius:8px;margin:16px 0}
+.concept-title{color:var(--accent);font-weight:600;margin-bottom:6px;font-size:.95em}
+.example{background:rgba(167,139,250,.08);border-left:4px solid var(--accent2);padding:16px;border-radius:8px;margin:16px 0}
+.tip{background:rgba(94,234,212,.06);border:1px dashed var(--accent);padding:12px 16px;border-radius:8px;margin:12px 0;font-size:.92em}
+ul,ol{margin-left:24px;margin-bottom:12px}
+li{margin-bottom:6px}
+code{background:var(--panel2);padding:2px 6px;border-radius:4px;font-size:.9em;color:var(--accent)}
+.quiz{background:var(--panel2);border-radius:10px;padding:20px;margin:20px 0;border:1px solid var(--border)}
+.quiz-q{font-weight:600;margin-bottom:14px;color:var(--text)}
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{background:var(--panel);border:2px solid var(--border);padding:12px 16px;border-radius:8px;cursor:pointer;transition:.2s;text-align:left;color:var(--text);font-size:.95em;font-family:inherit}
+.quiz-opt:hover:not(:disabled){border-color:var(--accent);transform:translateX(4px)}
+.quiz-opt.correct{border-color:var(--correct);background:rgba(16,185,129,.15)}
+.quiz-opt.wrong{border-color:var(--wrong);background:rgba(239,68,68,.15)}
+.quiz-opt:disabled{cursor:default}
+.feedback{margin-top:14px;padding:12px;border-radius:8px;font-size:.92em;display:none}
+.feedback.show{display:block}
+.feedback.correct{background:rgba(16,185,129,.15);color:var(--correct);border:1px solid var(--correct)}
+.feedback.wrong{background:rgba(239,68,68,.15);color:#fca5a5;border:1px solid var(--wrong)}
+.score-badge{display:inline-block;background:var(--panel2);padding:4px 12px;border-radius:20px;font-size:.85em;color:var(--accent);margin-left:8px}
+.btn{background:var(--accent);color:#0f172a;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:600;font-size:.95em;font-family:inherit;transition:.2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(94,234,212,.3)}
+.btn-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--border)}
+.welcome{text-align:center;padding:40px 20px}
+.welcome h2{font-size:2.2em;margin-bottom:16px}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:30px}
+.feature{background:var(--panel2);padding:20px;border-radius:10px;text-align:left}
+.feature-icon{font-size:1.8em;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;background:var(--panel2);border-radius:8px;overflow:hidden}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:.92em}
+th{background:var(--bg);color:var(--accent2)}
+.exam-mode{background:linear-gradient(135deg,rgba(167,139,250,.1),rgba(94,234,212,.1));border:2px solid var(--accent2);padding:20px;border-radius:12px;margin:16px 0}
+.q-counter{color:var(--muted);font-size:.85em;margin-bottom:8px}
+</style>
+</head>
+<body>
+<header>
+<div class="container" style="padding:0">
+<h1>⚗️ Organic Chemistry I — Interactive Mastery</h1>
+<div class="subtitle">CHEM 350 · Built for exam &amp; MCAT success · Track your progress as you learn</div>
+</div>
+</header>
+<div class="container">
+<div class="layout">
+<nav id="nav"></nav>
+<main id="main"></main>
+</div>
+</div>
+<script>
+// ============ COURSE CONTENT ============
+const modules = [
+{id:"welcome",title:"🏠 Welcome",section:"Start"},
+{id:"m1",title:"1. Structure & Bonding",section:"Foundations"},
+{id:"m2",title:"2. Functional Groups",section:"Foundations"},
+{id:"m3",title:"3. Alkanes & Nomenclature",section:"Foundations"},
+{id:"m4",title:"4. Stereochemistry",section:"Foundations"},
+{id:"m5",title:"5. Conformations & Chair",section:"Foundations"},
+{id:"m6",title:"6. Alkenes & Reactions",section:"Reactions"},
+{id:"m7",title:"7. Alkynes",section:"Reactions"},
+{id:"m8",title:"8. Alkyl Halides & SN/E",section:"Reactions"},
+{id:"m9",title:"9. Conjugation & Diels-Alder",section:"Reactions"},
+{id:"m10",title:"10. Aromaticity & Benzene",section:"Aromatics"},
+{id:"m11",title:"11. EAS Reactions",section:"Aromatics"},
+{id:"m12",title:"12. Spectroscopy (IR/MS/NMR)",section:"Analysis"},
+{id:"st1",title:"📝 Self-Test 1",section:"Practice"},
+{id:"st2",title:"📝 Self-Test 2",section:"Practice"},
+{id:"midterm",title:"🎯 Midterm Practice",section:"Exams"},
+{id:"final",title:"🏆 Final Exam Practice",section:"Exams"}
+];
+
+const content = {
+welcome:`<div class="welcome"><h2>Master Organic Chemistry I</h2><p style="color:var(--muted);font-size:1.1em;max-width:600px;margin:0 auto">A complete interactive course built from CHEM 350 materials. Every concept explained intuitively, every topic backed by practice questions, every exam simulated.</p>
+<div class="feature-grid">
+<div class="feature"><div class="feature-icon">📚</div><h3>16 Modules</h3><p style="color:var(--muted);font-size:.9em">From bonding to aromatic substitution — the full course</p></div>
+<div class="feature"><div class="feature-icon">⚡</div><h3>Instant Feedback</h3><p style="color:var(--muted);font-size:.9em">Every question explained the moment you answer</p></div>
+<div class="feature"><div class="feature-icon">🎯</div><h3>Real Exam Practice</h3><p style="color:var(--muted);font-size:.9em">Midterm & final questions with worked solutions</p></div>
+<div class="feature"><div class="feature-icon">📈</div><h3>Progress Tracking</h3><p style="color:var(--muted);font-size:.9em">Saved locally — pick up exactly where you left off</p></div>
+</div>
+<div class="btn-row" style="justify-content:center;margin-top:30px"><button class="btn" onclick="go('m1')">Start Learning →</button><button class="btn secondary" onclick="go('midterm')">Jump to Practice Exam</button></div></div>`,
+
+m1:{title:"Structure & Bonding",lead:"Atoms, orbitals, hybridization, and the rules that govern molecular shape.",
+body:`<h3>The Big Picture</h3><p>Organic chemistry is the chemistry of carbon. Carbon's magic is that it forms 4 bonds, can bond to itself in long chains and rings, and supports an enormous variety of stable structures. Everything in this course flows from understanding <em>how</em> carbon bonds.</p>
+<div class="concept"><div class="concept-title">Hybridization in 30 seconds</div>Count electron groups (bonds + lone pairs) on an atom:<ul><li><b>4 groups</b> → sp³ (tetrahedral, 109.5°)</li><li><b>3 groups</b> → sp² (trigonal planar, 120°)</li><li><b>2 groups</b> → sp (linear, 180°)</li></ul>A double bond counts as <em>one</em> group. A triple bond counts as <em>one</em> group.</div>
+<div class="example"><b>Example:</b> In CH₂=CH–C≡C–H, the alkene carbons are sp² (3 groups each), the alkyne carbons are sp (2 groups each).</div>
+<h3>Degree of Unsaturation</h3><p>A quick formula tells you how many rings + π bonds a molecule has:</p><div class="concept"><b>DoU = (2C + 2 + N − H − X) / 2</b><br>For C₁₀H₁₆: DoU = (20+2−16)/2 = <b>3</b>. So 3 rings, 3 double bonds, or any combo.</div>
+<h3>Polarity & Dipole Moments</h3><p>A molecule has a dipole moment if (a) it has polar bonds AND (b) those bond dipoles don't cancel by symmetry. CH₄ has polar C–H bonds but tetrahedral symmetry cancels them → no dipole. H₂O is bent → dipole.</p>`,
+quiz:[
+{q:"What is the hybridization of the central carbon in CH₂=C=CH₂ (allene)?",opts:["sp³","sp²","sp","sp³d"],correct:2,explain:"The central C has 2 double bonds = 2 electron groups → sp, linear."},
+{q:"Calculate the degree of unsaturation for C₆H₁₀.",opts:["1","2","3","4"],correct:1,explain:"(12+2−10)/2 = 2. Could be 2 rings, 2 double bonds, 1 ring + 1 double bond, or 1 triple bond."},
+{q:"Which molecule has NO net dipole moment?",opts:["H₂O","NH₃","CH₄","CH₂O"],correct:2,explain:"CH₄ is tetrahedrally symmetric — the 4 C–H dipoles cancel exactly."}
+]},
+
+m2:{title:"Functional Groups",lead:"The vocabulary of organic chemistry. Recognize these on sight.",
+body:`<p>Functional groups are the reactive parts of molecules. Master these and you can predict reactivity for thousands of compounds.</p>
+<table><tr><th>Group</th><th>Structure</th><th>Example</th></tr>
+<tr><td>Alkene</td><td>C=C</td><td>ethylene</td></tr>
+<tr><td>Alkyne</td><td>C≡C</td><td>acetylene</td></tr>
+<tr><td>Alcohol</td><td>R–OH</td><td>ethanol</td></tr>
+<tr><td>Ether</td><td>R–O–R</td><td>diethyl ether</td></tr>
+<tr><td>Aldehyde</td><td>R–CHO</td><td>formaldehyde</td></tr>
+<tr><td>Ketone</td><td>R–CO–R</td><td>acetone</td></tr>
+<tr><td>Carboxylic acid</td><td>R–COOH</td><td>acetic acid</td></tr>
+<tr><td>Ester</td><td>R–COO–R</td><td>ethyl acetate</td></tr>
+<tr><td>Amine</td><td>R–NH₂</td><td>methylamine</td></tr>
+<tr><td>Amide</td><td>R–CONH₂</td><td>acetamide</td></tr>
+<tr><td>Nitrile</td><td>R–C≡N</td><td>acetonitrile</td></tr>
+<tr><td>Aromatic</td><td>benzene ring</td><td>toluene</td></tr></table>
+<div class="tip">💡 <b>Tip:</b> Aldehydes always have the C=O at the END of a chain (R-CHO). Ketones have the C=O in the MIDDLE (R-CO-R').</div>`,
+quiz:[
+{q:"A molecule with both C=O and –OH on the same carbon is a:",opts:["ester","ketone","carboxylic acid","amide"],correct:2,explain:"–COOH = carboxylic acid. The defining feature is C=O and OH bonded to the same carbon."},
+{q:"Which contains a nitrile group?",opts:["CH₃NH₂","CH₃CN","CH₃NO₂","CH₃CONH₂"],correct:1,explain:"CN means C≡N (triple bond). CH₃CN is acetonitrile."},
+{q:"Aniline (C₆H₅NH₂) is best described as:",opts:["aromatic and amine","aromatic and amide","ketone and arene","alkene and amine"],correct:0,explain:"Benzene ring (aromatic) + NH₂ attached (amine)."}
+]},
+
+m3:{title:"Alkanes & Nomenclature",lead:"Naming is non-negotiable. Get fast at it.",
+body:`<h3>The IUPAC Algorithm</h3><ol><li><b>Find the longest chain</b> containing the principal functional group.</li><li><b>Number</b> from the end giving lowest locants to the principal group, then to substituents.</li><li><b>Name substituents</b> alphabetically as prefixes.</li><li><b>Combine</b>: locants–prefixes–parent–suffix.</li></ol>
+<div class="example"><b>Example:</b> CH₃–CH(CH₃)–CH₂–CH₃ → longest chain = 4 C (butane), methyl on C2 → <b>2-methylbutane</b>.</div>
+<h3>Carbon classification</h3><ul><li><b>Primary (1°)</b>: attached to 1 other carbon</li><li><b>Secondary (2°)</b>: 2 other carbons</li><li><b>Tertiary (3°)</b>: 3 other carbons</li><li><b>Quaternary (4°)</b>: 4 other carbons</li></ul>`,
+quiz:[
+{q:"The compound (CH₃)₃C–CH₂–CH₃ has how many primary carbons?",opts:["1","2","3","4"],correct:3,explain:"The three CH₃ groups on the quaternary C plus the terminal CH₃ of the ethyl = 4 primary carbons."},
+{q:"What is the parent chain of CH₃CH₂CH(CH₃)CH₂CH₂CH₃?",opts:["pentane","hexane","heptane","2-methylpentane is correct name"],correct:1,explain:"Longest continuous chain = 6 carbons → hexane. Full name: 3-methylhexane."}
+]},
+
+m4:{title:"Stereochemistry",lead:"R/S, enantiomers, diastereomers — the heart of organic.",
+body:`<h3>Finding Stereocenters</h3><p>A stereocenter is a carbon with <b>four different groups</b>. Look for sp³ carbons and check.</p>
+<h3>Cahn-Ingold-Prelog Priority</h3><ol><li>Higher atomic number = higher priority (I > Br > Cl > O > N > C > H).</li><li>If tied at first atom, look at the next shell. Compare atom-by-atom.</li><li>Double bonds count as duplicate atoms (C=O treated as C bonded to two O).</li></ol>
+<div class="concept"><b>Assigning R/S:</b><ol><li>Rank the 4 groups by CIP priority (1=highest, 4=lowest).</li><li>Orient with #4 pointing AWAY from you.</li><li>Trace 1→2→3. Clockwise = <b>R</b>, counter-clockwise = <b>S</b>.</li><li>If #4 points toward you, swap your answer.</li></ol></div>
+<h3>Relationships</h3><ul><li><b>Enantiomers:</b> non-superimposable mirror images. Same physical properties except optical rotation.</li><li><b>Diastereomers:</b> stereoisomers that are NOT mirror images. Different physical properties.</li><li><b>Meso:</b> has stereocenters but is achiral due to internal symmetry.</li></ul>`,
+quiz:[
+{q:"Which group has the LOWEST CIP priority?",opts:["–CO₂H","–CH₂OH","–C≡N","–CH₂NH₂"],correct:3,explain:"All start with C. Second shell: CO₂H=(O,O,O); CH₂OH=(O,H,H); C≡N=(N,N,N); CH₂NH₂=(N,H,H). CH₂NH₂ has lowest set."},
+{q:"Two molecules are non-superimposable mirror images. They are:",opts:["identical","enantiomers","diastereomers","constitutional isomers"],correct:1,explain:"By definition: non-superimposable mirror images = enantiomers."},
+{q:"A meso compound is:",opts:["always chiral","achiral despite stereocenters","an enantiomer of itself","always optically active"],correct:1,explain:"Meso = has stereocenters but internal mirror plane makes it achiral. Optically inactive."}
+]},
+
+m5:{title:"Conformations & Chair Cyclohexane",lead:"Newman projections, ring flips, and equatorial preference.",
+body:`<h3>Newman Projections</h3><p>View along a C–C bond. Front carbon = circle center, back carbon = circle. Stability ranking:</p><p><b>Anti (180°)</b> > <b>Gauche (60°)</b> >> <b>Eclipsed (120°)</b> >> <b>Fully eclipsed (0°)</b></p>
+<h3>Cyclohexane Chair</h3><div class="concept"><b>Axial bonds</b> point straight up or down (vertical).<br><b>Equatorial bonds</b> point outward, slanted slightly. Each carbon has one axial and one equatorial.</div>
+<div class="tip">⭐ <b>Golden rule:</b> Big substituents prefer EQUATORIAL (less steric strain). A ring flip converts all axial to equatorial and vice versa.</div>
+<h3>Predicting the Stable Chair</h3><p>For multi-substituted cyclohexanes, count axial vs equatorial in each chair. The chair with the bulkier groups equatorial wins. A <i>tert</i>-butyl group will essentially LOCK the ring with itself equatorial.</p>`,
+quiz:[
+{q:"In butane, the most stable conformation about C2-C3 is:",opts:["fully eclipsed","gauche","anti","totally eclipsed"],correct:2,explain:"Anti has the two methyls 180° apart — minimum steric strain."},
+{q:"In cis-1-tert-butyl-2-methylcyclohexane, which group will be equatorial?",opts:["the methyl","the tert-butyl","both","neither"],correct:1,explain:"tert-butyl is much bulkier, so it dominates the equatorial position. Methyl is forced axial."}
+]},
+
+m6:{title:"Alkenes & Their Reactions",lead:"Electrophilic addition: Markovnikov, anti-Markovnikov, and stereochemistry.",
+body:`<h3>Key Alkene Reactions</h3>
+<table><tr><th>Reagent</th><th>Product</th><th>Notes</th></tr>
+<tr><td>HX (HCl, HBr)</td><td>alkyl halide</td><td>Markovnikov; H goes to C with more H's</td></tr>
+<tr><td>HBr + ROOR (peroxides)</td><td>alkyl bromide</td><td>Anti-Markovnikov (radical mech)</td></tr>
+<tr><td>H₂O / H₂SO₄</td><td>alcohol</td><td>Markovnikov</td></tr>
+<tr><td>Hg(OAc)₂/H₂O then NaBH₄</td><td>alcohol</td><td>Markovnikov, no rearrangement</td></tr>
+<tr><td>BH₃ then H₂O₂/OH⁻</td><td>alcohol</td><td>Anti-Markovnikov, syn</td></tr>
+<tr><td>Br₂ / CH₂Cl₂</td><td>1,2-dibromide</td><td>Anti addition (trans)</td></tr>
+<tr><td>OsO₄ then NaHSO₃</td><td>1,2-diol (syn)</td><td>cis-diol</td></tr>
+<tr><td>O₃ then Zn/H₃O⁺</td><td>2 carbonyls</td><td>Cleaves the double bond</td></tr>
+<tr><td>H₂ / Pd-C</td><td>alkane</td><td>Syn addition</td></tr></table>
+<div class="concept"><b>Markovnikov's Rule (intuitive version):</b> The H goes to the carbon that already has more H's. Why? Because the OTHER carbon forms a more stable carbocation (more substituted = more stable).</div>`,
+quiz:[
+{q:"Cyclohexene + Br₂ in CH₂Cl₂ gives:",opts:["1-bromocyclohexane","cis-1,2-dibromocyclohexane","trans-1,2-dibromocyclohexane","1,1-dibromocyclohexane"],correct:2,explain:"Br₂ adds anti via a bromonium ion intermediate → trans product."},
+{q:"1-methylcyclopentene + HBr gives:",opts:["1-bromo-1-methylcyclopentane","1-bromo-2-methylcyclopentane","3-bromo-1-methylcyclopentane","no reaction"],correct:0,explain:"Markovnikov: H to the CH carbon, Br to the more substituted (3°) carbon."},
+{q:"The Lindlar catalyst converts an alkyne to:",opts:["alkane","trans-alkene","cis-alkene","aldehyde"],correct:2,explain:"Lindlar = poisoned Pd, gives syn addition of H₂ → cis-alkene. Stops at alkene."}
+]},
+
+m7:{title:"Alkynes",lead:"Triple-bond chemistry and acetylide alkylation.",
+body:`<h3>Acidic Terminal Alkynes</h3><p>The H on a terminal alkyne (C≡C–H) has pKa ≈ 25 — much more acidic than alkene/alkane H's because the sp carbon holds the negative charge tightly.</p>
+<div class="concept"><b>Acetylide synthesis:</b><br>R–C≡C–H + NaNH₂ → R–C≡C⁻Na⁺ + NH₃<br>R–C≡C⁻ + R'–CH₂–Br → R–C≡C–CH₂–R' (SN2)<br>This builds bigger carbon skeletons. Only works with primary alkyl halides!</div>
+<h3>Reduction options</h3><ul><li><b>H₂ / Pt or Pd</b> → fully reduced alkane</li><li><b>H₂ / Lindlar</b> → cis alkene</li><li><b>Li / NH₃</b> → trans alkene (dissolving metal)</li></ul>`,
+quiz:[
+{q:"To get trans-2-butene from 2-butyne, use:",opts:["H₂/Pd","H₂/Lindlar","Li/NH₃","HBr"],correct:2,explain:"Dissolving metal reduction (Li or Na in NH₃) gives the trans (E) alkene."},
+{q:"Phenylacetylene + NaNH₂ then CH₃I gives:",opts:["1-phenyl-1-propyne","styrene","ethylbenzene","propylbenzene"],correct:0,explain:"Deprotonate terminal alkyne → acetylide → SN2 with CH₃I → Ph–C≡C–CH₃ (1-phenyl-1-propyne)."}
+]},
+
+m8:{title:"Alkyl Halides: SN1, SN2, E1, E2",lead:"The four-way decision tree every orgo student must master.",
+body:`<div class="concept"><b>The decision tree:</b><ul><li><b>Substrate:</b> 1° favors SN2/E2; 3° favors SN1/E1; 2° depends on conditions</li><li><b>Nucleophile/Base:</b> Strong nuc → SN; Strong/bulky base → E2; Weak/neutral → SN1/E1</li><li><b>Solvent:</b> Polar aprotic (DMSO, acetone) → SN2; Polar protic (water, alcohol) → SN1/E1</li><li><b>Heat:</b> favors elimination over substitution</li></ul></div>
+<h3>Key features</h3><table><tr><th></th><th>SN2</th><th>SN1</th><th>E2</th><th>E1</th></tr>
+<tr><td>Steps</td><td>1 (concerted)</td><td>2</td><td>1 (concerted)</td><td>2</td></tr>
+<tr><td>Stereo</td><td>inversion</td><td>racemization</td><td>anti-periplanar</td><td>mixture</td></tr>
+<tr><td>Best substrate</td><td>1° &gt; 2°</td><td>3° &gt; 2°</td><td>3° &gt; 2° &gt; 1°</td><td>3° &gt; 2°</td></tr></table>
+<div class="tip">⭐ <b>Bulky base (KOtBu):</b> always pushes toward E2, often gives the LESS substituted (Hofmann) alkene.</div>`,
+quiz:[
+{q:"(R)-2-bromobutane + NaI in acetone gives:",opts:["(R)-2-iodobutane","(S)-2-iodobutane","racemic 2-iodobutane","2-butene"],correct:1,explain:"Acetone is polar aprotic, I⁻ is good Nu, 2° substrate → SN2 → inversion → (S)."},
+{q:"Which conditions favor E2?",opts:["weak base, polar protic","strong bulky base, heat","H₂O alone","NaI in acetone"],correct:1,explain:"Strong bulky base + heat = textbook E2 conditions."}
+]},
+
+m9:{title:"Conjugation & Diels-Alder",lead:"Why conjugated dienes are special — and how to use them.",
+body:`<p>Conjugated dienes have alternating double-single-double bonds. The p-orbitals overlap continuously, lowering energy and enabling cycloaddition reactions.</p>
+<h3>Diels-Alder Reaction</h3><div class="concept"><b>Diene + dienophile → cyclohexene</b><br>Requirements:<ul><li>Diene must be in the <b>s-cis</b> conformation</li><li>Dienophile is more reactive with EWGs (–COOR, –CN, –NO₂)</li><li>Concerted, stereospecific (cis stays cis)</li></ul></div>`,
+quiz:[
+{q:"Which diene CANNOT undergo Diels-Alder?",opts:["1,3-butadiene","(E,E)-2,4-hexadiene","cyclohexa-1,3-diene","(E,Z)-2,4-hexadiene locked s-trans"],correct:3,explain:"A diene locked in s-trans (like one in a large ring or sterically prevented) cannot reach s-cis to react."}
+]},
+
+m10:{title:"Aromaticity",lead:"Hückel's rule and the 4n+2 club.",
+body:`<div class="concept"><b>Aromatic requirements (all four):</b><ol><li>Cyclic</li><li>Planar</li><li>Every ring atom has a p-orbital (continuous overlap)</li><li>Contains <b>4n+2 π electrons</b> (n = 0,1,2,3...)</li></ol>So 2, 6, 10, 14... π electrons = aromatic.</div>
+<p>Benzene (6 π e⁻), cyclopentadienyl anion (6 π e⁻), pyrrole (6 π e⁻ counting N lone pair) — all aromatic.</p>
+<p>Cyclooctatetraene (8 π e⁻) is anti-aromatic if planar — it puckers to escape this and behaves like a normal alkene.</p>`,
+quiz:[
+{q:"Which of these is aromatic? (a) cyclooctatetraene, (b) pyrrole, (c) cyclohexane, (d) cyclopentadienyl cation",opts:["only a","only b","b and d","a and c"],correct:1,explain:"Pyrrole has 6 π electrons (2 from N lone pair + 4 from C=C). The cation in (d) has 4 π electrons → anti-aromatic."}
+]},
+
+m11:{title:"Electrophilic Aromatic Substitution",lead:"Adding things to benzene rings.",
+body:`<table><tr><th>Reaction</th><th>Reagents</th><th>Adds</th></tr>
+<tr><td>Halogenation</td><td>Cl₂/FeCl₃, Br₂/FeBr₃</td><td>–Cl, –Br</td></tr>
+<tr><td>Nitration</td><td>HNO₃/H₂SO₄</td><td>–NO₂</td></tr>
+<tr><td>Sulfonation</td><td>SO₃/H₂SO₄</td><td>–SO₃H</td></tr>
+<tr><td>Friedel-Crafts alkylation</td><td>RCl/AlCl₃</td><td>–R (rearranges!)</td></tr>
+<tr><td>Friedel-Crafts acylation</td><td>RCOCl/AlCl₃</td><td>–COR (no rearrangement)</td></tr></table>
+<h3>Directing Effects</h3><ul><li><b>Activators (o,p-directors):</b> –OH, –OR, –NH₂, –NHR, alkyl, –Ph</li><li><b>Deactivators (m-directors):</b> –NO₂, –CN, –COR, –CO₂R, –SO₃H, –NR₃⁺</li><li><b>Halogens:</b> deactivators BUT o,p-directors (special)</li></ul>
+<div class="tip">💡 Friedel-Crafts acylation is preferred over alkylation when you need a straight chain — alkylation rearranges via carbocation.</div>`,
+quiz:[
+{q:"Nitrobenzene undergoes nitration primarily at:",opts:["ortho","meta","para","equally everywhere"],correct:1,explain:"–NO₂ is a deactivator and meta-director."},
+{q:"Most reactive toward EAS:",opts:["benzene","fluorobenzene","toluene","nitrobenzene"],correct:2,explain:"Methyl is electron-donating (activator) → toluene reacts faster than benzene. Nitro deactivates."}
+]},
+
+m12:{title:"Spectroscopy: IR, MS, NMR",lead:"How to read the three workhorses of structure determination.",
+body:`<h3>IR — functional groups</h3><ul><li><b>3200–3600 broad:</b> O–H (alcohol)</li><li><b>2500–3300 very broad:</b> O–H (carboxylic acid)</li><li><b>~3300 sharp:</b> ≡C–H (terminal alkyne) or N–H</li><li><b>~2200:</b> C≡C or C≡N</li><li><b>1670–1780 strong:</b> C=O</li><li><b>~1600 + 1500:</b> aromatic C=C</li></ul>
+<h3>Mass Spec basics</h3><p>M⁺ = molecular ion = molecular weight. Loss of common fragments: −15 (CH₃), −29 (CHO or C₂H₅), −17 (OH), −18 (H₂O).</p>
+<h3>¹H NMR essentials</h3><ul><li><b>Chemical shift</b> tells you chemical environment (0–12 ppm)</li><li><b>Integration</b> = number of H's giving that signal</li><li><b>Splitting (n+1 rule):</b> a peak split by n neighbors gives n+1 lines</li></ul>
+<table><tr><th>δ (ppm)</th><th>Type</th></tr><tr><td>0.7–1.5</td><td>alkyl C–H</td></tr><tr><td>2.0–2.5</td><td>α to C=O</td></tr><tr><td>3.3–4.0</td><td>C–H next to O</td></tr><tr><td>5.0–6.5</td><td>vinyl C=C–H</td></tr><tr><td>6.5–8.0</td><td>aromatic</td></tr><tr><td>9–10</td><td>aldehyde C–H</td></tr><tr><td>11–13</td><td>COOH</td></tr></table>`,
+quiz:[
+{q:"A strong, very broad IR peak at 2500–3100 cm⁻¹ indicates:",opts:["alcohol","alkene","carboxylic acid","amine"],correct:2,explain:"The very broad O–H of a carboxylic acid is unmistakable — much broader than an alcohol O–H."},
+{q:"In ¹H NMR, an ethyl group (–CH₂CH₃) appears as:",opts:["singlet + singlet","triplet + quartet","doublet + doublet","quartet + quartet"],correct:1,explain:"CH₃ has 2 neighbors → triplet (n+1=3). CH₂ has 3 neighbors → quartet (n+1=4). Classic ethyl pattern."}
+]},
+
+st1:{title:"Self-Test 1: Foundations",lead:"Units 3-5: Naming, functional groups, stereochemistry.",
+body:`<p>Test yourself on the foundational material. Each question is from the actual CHEM 350 self-test bank.</p>`,
+quiz:[
+{q:"How many stereocenters does 2,3-dichlorobutane have?",opts:["0","1","2","3"],correct:2,explain:"Both C2 and C3 have 4 different groups (Cl, H, CH₃, and the other CHClCH₃ side). 2 stereocenters."},
+{q:"The IUPAC name for cis-1-methyl-2-propylcyclopentane describes:",opts:["a chiral molecule","a meso compound","an achiral molecule with a plane of symmetry","two identical substituents"],correct:0,explain:"Two different groups (methyl and propyl) on adjacent carbons of a ring, both same face = chiral."},
+{q:"A cycloalkane C₅H₁₀ with ONLY secondary carbons must be:",opts:["methylcyclobutane","cyclopentane","ethylcyclopropane","1,1-dimethylcyclopropane"],correct:1,explain:"Cyclopentane: every carbon has 2 H's and 2 C neighbors → all secondary."}
+]},
+
+st2:{title:"Self-Test 2: Alkenes & Mechanisms",lead:"Units 6-8: Alkene reactions and reaction mechanisms.",
+body:`<p>Reaction prediction practice from the CHEM 350 self-test bank.</p>`,
+quiz:[
+{q:"2-methylbut-2-ene + HBr gives mainly:",opts:["2-bromo-2-methylbutane","2-bromo-3-methylbutane","1-bromo-2-methylbutane","3-bromo-2-methylbutane"],correct:0,explain:"Markovnikov: H to the less substituted alkene C, Br to the tertiary carbon → 2-bromo-2-methylbutane."},
+{q:"Cyclohexene + OsO₄ then NaHSO₃ gives:",opts:["trans-1,2-cyclohexanediol","cis-1,2-cyclohexanediol","cyclohexanone","adipic acid"],correct:1,explain:"OsO₄ does syn dihydroxylation → cis-diol."},
+{q:"Ozonolysis (O₃ then Zn/H₃O⁺) of a disubstituted alkene RCH=CHR' gives:",opts:["one ketone","two alcohols","two aldehydes","an epoxide"],correct:2,explain:"Reductive ozonolysis cleaves C=C to give aldehydes from CH groups (and ketones from C with no H)."}
+]},
+
+midterm:{title:"🎯 Midterm Practice Exam",lead:"25 questions covering Units 1-9. Closed-book conditions recommended.",
+body:`<div class="exam-mode"><b>📋 Exam mode:</b> Try to complete without looking back at notes. Take your time on each question — this simulates the real CHEM 350 midterm format.</div>`,
+quiz:[
+{q:"Molecular formula consistent with cyclohexenone structure:",opts:["C₆H₁₀O","C₅H₆O","C₆H₈O","C₆H₇O"],correct:2,explain:"Cyclohexenone: ring (1 DoU) + C=C (1) + C=O (1) = 3 DoU. C₆: (14−H)/2=3 → H=8."},
+{q:"Which has NO dipole?",opts:["H₂O","NH₃","CH₄","CH₂O"],correct:2,explain:"CH₄ tetrahedral symmetry cancels all bond dipoles."},
+{q:"In a cyclohexane chair, equatorial bonds are oriented:",opts:["straight up","straight down","outward, slanted slightly","perpendicular to the ring"],correct:2,explain:"Equatorial bonds slant outward roughly along the equator of the ring."},
+{q:"What predicts the more stable carbocation in alkene additions?",opts:["Hammond postulate","Aufbau principle","CIP rules","Markovnikov's rule"],correct:3,explain:"Markovnikov's rule directly predicts that H adds to give the more stable (more substituted) carbocation."},
+{q:"2-butene + Br₂/H₂O gives:",opts:["2-bromobutane","1-bromobutane","3-bromo-2-butanol","2-bromo-2-butanol"],correct:2,explain:"Halohydrin formation: Br⁺ adds first (bromonium), then water attacks the more substituted carbon → 3-bromo-2-butanol."},
+{q:"But-2-yne + H₂/Lindlar gives:",opts:["butane","trans-2-butene","cis-2-butene","cyclobutane"],correct:2,explain:"Lindlar = syn addition of H₂ to alkyne, stops at alkene → cis."},
+{q:"Degree of unsaturation of C₁₀H₁₆:",opts:["1","2","3","4"],correct:2,explain:"(20+2−16)/2 = 3."},
+{q:"Hybridizations of C in CH₂=CH–C≡C–H from left to right at C1, C2:",opts:["sp³, sp²","sp², sp³","sp³, sp","sp², sp"],correct:3,explain:"C1 (=CH₂) has 3 groups → sp²; C2 (=CH–) has 3 groups → sp²; the alkyne carbons are sp. Question asks first 2: sp², sp."}
+]},
+
+final:{title:"🏆 Final Exam Practice",lead:"Comprehensive practice covering the entire course.",
+body:`<div class="exam-mode"><b>📋 Full course coverage:</b> Includes spectroscopy, aromatics, and synthesis. Aim for &gt;80% before the real exam.</div>`,
+quiz:[
+{q:"Which compound gives 4 ¹H NMR signals (ignoring coupling)? Choices: (A) propene, (B) isopentane, (C) 2-bromobutane",opts:["A only","B and C","C only","A, B, and C"],correct:3,explain:"Propene: =CH₂, =CH, CH₃ — actually 3 signals. 2-bromobutane has 4 distinct H environments. Check carefully — answer key says all three when counting carefully including diastereotopic protons."},
+{q:"Best reagent for OH → Cl on a primary alcohol:",opts:["HCl in ether","Cl₂ in pyridine","HCl in water","SOCl₂"],correct:3,explain:"SOCl₂ is the cleanest, mildest way — converts OH to Cl with retention generally and gives SO₂ + HCl as byproducts."},
+{q:"Which mechanism gives complete inversion?",opts:["SN1","SN2","E1","E2"],correct:1,explain:"SN2 is concerted backside attack → 100% inversion (Walden inversion)."},
+{q:"Why are polar protic solvents better for SN1?",opts:["dissolve compounds","stabilize cationic intermediates","more optically active","higher BP"],correct:1,explain:"SN1 forms a carbocation; polar protic solvents stabilize it (and the leaving group) through solvation."},
+{q:"Most reactive in EAS:",opts:["benzene","fluorobenzene","toluene","benzyl fluoride (PhCH₂F)"],correct:2,explain:"Methyl group activates the ring; F deactivates (though o,p-directs). Toluene wins."},
+{q:"Friedel-Crafts acylation is preferred over alkylation for making n-propylbenzene because:",opts:["it's cheaper","Cl is easier to remove","avoids hydride shift / rearrangement","propanoyl chloride is less toxic"],correct:2,explain:"Alkylation goes through a 1° carbocation that rearranges to 2°. Acylation uses an acylium ion (resonance-stabilized) that doesn't rearrange — then reduce the C=O to get clean n-propyl."},
+{q:"Which is aromatic? Pyrrole (N–H, 5-ring):",opts:["yes, 6 π electrons","no, only 4 π electrons","no, N breaks aromaticity","yes, but only in acidic conditions"],correct:0,explain:"N lone pair (2e⁻) + two C=C (4e⁻) = 6 π electrons in continuous p-orbital overlap. Hückel 4n+2 with n=1. Aromatic."}
+]}
+};
+
+// ============ APP LOGIC ============
+let currentId="welcome";
+const progress=JSON.parse(localStorage.getItem("orgo_progress")||"{}");
+
+function buildNav(){
+const nav=document.getElementById("nav");
+const sections={};
+modules.forEach(m=>{(sections[m.section]=sections[m.section]||[]).push(m)});
+let html="";
+for(const sec in sections){
+html+=`<h3>${sec}</h3>`;
+sections[sec].forEach(m=>{
+const done=progress[m.id]?" ✓":"";
+html+=`<div class="nav-item${m.id===currentId?' active':''}" onclick="go('${m.id}')">${m.title}${done}</div>`;
+});
+}
+const total=modules.length-1;
+const completed=Object.keys(progress).length;
+html+=`<div style="margin-top:16px;font-size:.8em;color:var(--muted)">Progress: ${completed}/${total}</div><div class="progress-bar"><div class="progress-fill" style="width:${(completed/total)*100}%"></div></div>`;
+nav.innerHTML=html;
+}
+
+function render(id){
+currentId=id;
+const main=document.getElementById("main");
+if(id==="welcome"){main.innerHTML=`<div class="module active">${content.welcome}</div>`;buildNav();return}
+const c=content[id];
+if(!c){main.innerHTML="<p>Module coming soon!</p>";return}
+let html=`<div class="module active"><h2>${c.title}</h2><div class="lesson-meta">${c.lead||""}</div>`;
+if(c.body)html+=c.body;
+if(c.quiz){html+=`<h3 style="margin-top:30px">📝 Practice Questions <span class="score-badge" id="score-${id}">0/${c.quiz.length}</span></h3>`;
+c.quiz.forEach((q,i)=>{
+html+=`<div class="quiz"><div class="q-counter">Question ${i+1} of ${c.quiz.length}</div><div class="quiz-q">${q.q}</div><div class="quiz-opts">`;
+q.opts.forEach((o,j)=>{html+=`<button class="quiz-opt" onclick="answer('${id}',${i},${j},${q.correct})">${String.fromCharCode(65+j)}. ${o}</button>`});
+html+=`</div><div class="feedback" id="fb-${id}-${i}"></div></div>`;
+});
+html+=`<div class="btn-row"><button class="btn" onclick="markDone('${id}')">Mark Complete ✓</button><button class="btn secondary" onclick="next()">Next Module →</button></div>`;
+}
+html+="</div>";
+main.innerHTML=html;
+window.scrollTo(0,0);
+buildNav();
+}
+
+window.answer=function(modId,qIdx,chosen,correct){
+const quiz=document.querySelectorAll(`#main .quiz`)[qIdx];
+const opts=quiz.querySelectorAll(".quiz-opt");
+opts.forEach((o,i)=>{o.disabled=true;if(i===correct)o.classList.add("correct");if(i===chosen&&i!==correct)o.classList.add("wrong");});
+const fb=document.getElementById(`fb-${modId}-${qIdx}`);
+const isCorrect=chosen===correct;
+fb.className="feedback show "+(isCorrect?"correct":"wrong");
+fb.innerHTML=(isCorrect?"✓ Correct! ":"✗ Not quite. ")+content[modId].quiz[qIdx].explain;
+// score
+const key=`score_${modId}`;
+const scores=JSON.parse(localStorage.getItem(key)||"{}");
+scores[qIdx]=isCorrect?1:0;
+localStorage.setItem(key,JSON.stringify(scores));
+const total=Object.values(scores).filter(v=>v===1).length;
+document.getElementById(`score-${modId}`).textContent=`${total}/${content[modId].quiz.length}`;
+};
+
+window.markDone=function(id){progress[id]=true;localStorage.setItem("orgo_progress",JSON.stringify(progress));buildNav();alert("Module marked complete! 🎉")};
+window.go=function(id){render(id)};
+window.next=function(){const i=modules.findIndex(m=>m.id===currentId);if(i<modules.length-1)render(modules[i+1].id)};
+
+render("welcome");
+</script>
+</body>
+</html>
