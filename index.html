@@ -283,7 +283,39 @@ quiz:[
 
 m3:{title:"Alkanes & Nomenclature",lead:"Naming molecules systematically. Once you know the algorithm, every molecule has exactly one correct name.",
 body:`<h3>Why nomenclature matters</h3><p>IUPAC names are the universal language of chemistry. A name tells you the structure unambiguously and vice versa. Every exam will test it, and once you internalize the algorithm it becomes automatic.</p>
-<h3>The IUPAC algorithm (memorize this)</h3><div class="concept"><ol><li><b>Find the longest continuous carbon chain</b> containing the principal functional group. This is your parent name.</li><li><b>Number the chain</b> from the end that gives the principal functional group the lowest possible locant. If no functional group, give substituents the lowest locants.</li><li><b>Identify substituents</b> (branches) and their positions.</li><li><b>Name substituents alphabetically</b> as prefixes (ignore di-, tri-, tetra- when alphabetizing).</li><li><b>Combine</b>: locants-prefixes-parent-suffix.</li></ol></div>
+<h3>The IUPAC algorithm (memorize this)</h3><div class="concept"><ol><li><b>Find the longest continuous carbon chain</b> containing the principal functional group. This is your parent name.</li><li><b>Number the chain</b> from the end that gives the principal functional group the lowest possible locant. If no functional group, give substituents the lowest locants.</li><li><b>Identify substituents</b> (branches) and their positions.</li><li><b>Name substituents alphabetically</b> as prefixes (ignore di-, tri-, tetra- when alphabetizing).</li><li><b>Combine</b>: locants-prefixes-parent-suffix.</li></ol>
+<svg viewBox="0 0 560 210" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:560px">
+<text x="280" y="18" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">Finding the Longest Chain — The #1 Trap</text>
+<!-- Molecule drawn with a bend -->
+<text x="60" y="75" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">CH₃</text>
+<line x1="80" y1="72" x2="120" y2="72" stroke="#e2e8f0" stroke-width="2"/>
+<text x="140" y="75" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">CH</text>
+<line x1="140" y1="82" x2="140" y2="110" stroke="#e2e8f0" stroke-width="2"/>
+<text x="140" y="125" fill="#94a3b8" font-size="12" text-anchor="middle">CH₃</text>
+<line x1="160" y1="72" x2="200" y2="72" stroke="#e2e8f0" stroke-width="2"/>
+<text x="220" y="75" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">CH₂</text>
+<line x1="240" y1="72" x2="280" y2="72" stroke="#e2e8f0" stroke-width="2"/>
+<text x="300" y="75" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">CH₂</text>
+<line x1="320" y1="72" x2="360" y2="72" stroke="#e2e8f0" stroke-width="2"/>
+<text x="380" y="75" fill="#e2e8f0" font-size="13" font-weight="600" text-anchor="middle">CH₃</text>
+<!-- Wrong way -->
+<rect x="50" y="40" width="340" height="18" rx="3" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 2"/>
+<text x="220" y="38" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">✗ WRONG: 5 carbons = "pentane" + methyl branch?</text>
+<!-- Right way -->
+<path d="M60,78 L120,78 L140,78 L140,115" fill="none" stroke="#10b981" stroke-width="3" opacity="0.3"/>
+<path d="M140,115 L140,78 L200,78 L280,78 L360,78 L380,78" fill="none" stroke="#10b981" stroke-width="3" opacity="0.3"/>
+<text x="280" y="100" fill="#10b981" font-size="10" font-weight="600" text-anchor="middle">✓ RIGHT: trace through the "branch" → 6 carbons = hexane</text>
+<!-- Numbering -->
+<text x="60" y="145" fill="#5eead4" font-size="11" text-anchor="middle">C1</text>
+<text x="140" y="145" fill="#5eead4" font-size="11" text-anchor="middle">C2</text>
+<text x="220" y="145" fill="#5eead4" font-size="11" text-anchor="middle">C3</text>
+<text x="300" y="145" fill="#5eead4" font-size="11" text-anchor="middle">C4</text>
+<text x="380" y="145" fill="#5eead4" font-size="11" text-anchor="middle">C5</text>
+<!-- Key takeaway -->
+<rect x="60" y="160" width="440" height="42" rx="6" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="280" y="177" fill="#5eead4" font-size="11" font-weight="600" text-anchor="middle">If a "branch" can be included in a longer chain, it's NOT a branch.</text>
+<text x="280" y="193" fill="#94a3b8" font-size="10" text-anchor="middle">Chains can zigzag! Always trace every possible path.</text>
+</svg></div>
 <h3>Parent chain names</h3><table><tr><th>Carbons</th><th>Name</th></tr><tr><td>1</td><td>methane</td></tr><tr><td>2</td><td>ethane</td></tr><tr><td>3</td><td>propane</td></tr><tr><td>4</td><td>butane</td></tr><tr><td>5</td><td>pentane</td></tr><tr><td>6</td><td>hexane</td></tr><tr><td>7</td><td>heptane</td></tr><tr><td>8</td><td>octane</td></tr><tr><td>9</td><td>nonane</td></tr><tr><td>10</td><td>decane</td></tr></table>
 <h3>Common substituents</h3><ul><li>methyl (–CH₃), ethyl (–C₂H₅), propyl (–C₃H₇)</li><li>isopropyl = (CH₃)₂CH– (3 carbons, branched)</li><li>tert-butyl = (CH₃)₃C– (4 carbons, fully branched)</li><li>halogens: fluoro, chloro, bromo, iodo</li></ul>
 <div class="example"><b>Worked example 1:</b> Name CH₃CH(CH₃)CH₂CH₂CH₃.<br>Step 1: Longest chain = 5 carbons (pentane).<br>Step 2: Number from the end closer to the methyl branch → methyl on C2.<br>Step 3: Name = <b>2-methylpentane</b>.</div>
@@ -707,14 +739,67 @@ quiz:[
 m7:{title:"Alkynes",lead:"Triple bonds, acidic terminal H's, and how to use acetylides as carbon nucleophiles to build bigger molecules.",
 body:`<h3>Why alkynes are special</h3><p>An alkyne has a C≡C triple bond: 1 σ + 2 π bonds. The two π bonds give it electron density on all sides (cylindrical, not planar), and the sp hybridization makes the carbons very electronegative — they hold electrons tightly. This has two huge consequences: (1) terminal alkynes are unusually acidic, and (2) the resulting acetylide ion is a powerful carbon nucleophile that can build new C–C bonds.</p>
 <h3>1. The acidity of terminal alkynes</h3><div class="concept"><b>Terminal alkyne</b> = C≡C–H (the H sits on a triple-bonded carbon).<br><b>pKa ≈ 25</b> for terminal alkynes — much more acidic than alkenes (pKa ≈ 44) or alkanes (pKa ≈ 50).<br>Why? The conjugate base (acetylide ion, RC≡C⁻) holds the negative charge on an sp carbon. sp carbons are 50% s-character, vs 33% for sp² and 25% for sp³. More s-character means electrons are held closer to the nucleus, stabilizing negative charge.</div>
-<div class="example"><b>Acidity ranking:</b> H₂O (pKa 16) > terminal alkyne (25) > NH₃ (35) > alkene (44) > alkane (50). This means strong bases like NaNH₂ (conjugate base of NH₃, pKa 35) can fully deprotonate a terminal alkyne. NaOH (conjugate base of water) is NOT strong enough — water is more acidic than the alkyne, so the equilibrium would go the wrong way.</div>
+<div class="example"><b>Acidity ranking:</b> H₂O (pKa 16) > terminal alkyne (25) > NH₃ (35) > alkene (44) > alkane (50). This means strong bases like NaNH₂ (conjugate base of NH₃, pKa 35) can fully deprotonate a terminal alkyne. NaOH (conjugate base of water) is NOT strong enough — water is more acidic than the alkyne, so the equilibrium would go the wrong way.
+<svg viewBox="0 0 560 130" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:560px">
+<text x="280" y="16" fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle">C–H Acidity Tracks with s-Character</text>
+<!-- Axis -->
+<line x1="40" y1="70" x2="520" y2="70" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="80" y="90" fill="#ef4444" font-size="10" text-anchor="middle">MORE acidic</text>
+<text x="480" y="90" fill="#10b981" font-size="10" text-anchor="middle">LESS acidic</text>
+<!-- sp -->
+<rect x="60" y="30" width="100" height="35" rx="6" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="110" y="46" fill="#ef4444" font-size="11" font-weight="700" text-anchor="middle">sp (50% s)</text>
+<text x="110" y="60" fill="#94a3b8" font-size="10" text-anchor="middle">alkyne pKa ~25</text>
+<!-- sp2 -->
+<rect x="210" y="30" width="100" height="35" rx="6" fill="rgba(251,191,36,0.1)" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="260" y="46" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">sp² (33% s)</text>
+<text x="260" y="60" fill="#94a3b8" font-size="10" text-anchor="middle">alkene pKa ~44</text>
+<!-- sp3 -->
+<rect x="370" y="30" width="100" height="35" rx="6" fill="rgba(16,185,129,0.1)" stroke="#10b981" stroke-width="1.5"/>
+<text x="420" y="46" fill="#10b981" font-size="11" font-weight="700" text-anchor="middle">sp³ (25% s)</text>
+<text x="420" y="60" fill="#94a3b8" font-size="10" text-anchor="middle">alkane pKa ~50</text>
+<!-- Arrow -->
+<line x1="170" y1="47" x2="200" y2="47" stroke="#94a3b8" stroke-width="1"/>
+<polygon points="200,47 194,43 194,51" fill="#94a3b8"/>
+<line x1="320" y1="47" x2="360" y2="47" stroke="#94a3b8" stroke-width="1"/>
+<polygon points="360,47 354,43 354,51" fill="#94a3b8"/>
+<!-- Explanation -->
+<text x="280" y="115" fill="#94a3b8" font-size="10" text-anchor="middle">More s-character → electrons closer to nucleus → anion more stable → more acidic</text>
+</svg></div>
 <h3>2. Acetylide alkylation — the C–C bond builder</h3><div class="concept"><b>Two-step synthesis:</b><br>Step 1: R–C≡C–H + NaNH₂ → R–C≡C⁻ Na⁺ + NH₃ (deprotonation)<br>Step 2: R–C≡C⁻ + R'–CH₂–X → R–C≡C–CH₂–R' + X⁻ (SN2 alkylation)<br><br><b>Critical limitation:</b> The alkyl halide R'–X must be PRIMARY (or methyl). Secondary or tertiary halides give E2 elimination instead — the strong acetylide acts as a base and just removes a proton, regenerating the alkene starting material. Frustrating but unavoidable.</div>
 <div class="example"><b>Worked example — synthesizing 2-pentyne from acetylene:</b><br>Goal: HC≡C–H → CH₃–C≡C–CH₂CH₃<br>Step 1: HC≡CH + NaNH₂ → HC≡C⁻Na⁺<br>Step 2: HC≡C⁻ + CH₃Br → HC≡C–CH₃ (propyne)<br>Step 3: HC≡C–CH₃ + NaNH₂ → ⁻C≡C–CH₃<br>Step 4: ⁻C≡C–CH₃ + CH₃CH₂Br → CH₃CH₂–C≡C–CH₃ (2-pentyne) ✓<br>Notice you can alkylate twice if the starting material is acetylene (HC≡CH) — both ends have an acidic H.</div>
 <h3>3. Reduction of alkynes — three options for three products</h3><table><tr><th>Reagent</th><th>Product</th><th>Stereochemistry</th></tr>
 <tr><td>H₂ / Pt or Pd-C (excess)</td><td>alkane</td><td>fully reduced</td></tr>
 <tr><td>H₂ / Lindlar catalyst</td><td>cis (Z) alkene</td><td>syn addition, stops at alkene</td></tr>
 <tr><td>Na or Li in NH₃(l)</td><td>trans (E) alkene</td><td>dissolving metal, anti addition</td></tr></table>
-<div class="tip">⭐ <b>The Lindlar/Li trick:</b> When a synthesis problem says "give me only the cis alkene" or "give me only the trans alkene", you can ALWAYS get there by going through an alkyne and choosing the right reduction. Alkyne → cis means Lindlar; alkyne → trans means Li/NH₃.</div>
+<div class="tip">⭐ <b>The Lindlar/Li trick:</b> When a synthesis problem says "give me only the cis alkene" or "give me only the trans alkene", you can ALWAYS get there by going through an alkyne and choosing the right reduction. Alkyne → cis means Lindlar; alkyne → trans means Li/NH₃.
+<svg viewBox="0 0 540 180" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:540px">
+<text x="270" y="16" fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle">Three Alkyne Reductions — Three Different Products</text>
+<!-- Alkyne center -->
+<rect x="195" y="25" width="150" height="30" rx="6" fill="rgba(94,234,212,0.1)" stroke="#5eead4" stroke-width="1.5"/>
+<text x="270" y="45" fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle">R–C≡C–R (alkyne)</text>
+<!-- Three arrows down -->
+<line x1="120" y1="55" x2="80" y2="85" stroke="#10b981" stroke-width="2"/>
+<line x1="270" y1="55" x2="270" y2="85" stroke="#a78bfa" stroke-width="2"/>
+<line x1="420" y1="55" x2="460" y2="85" stroke="#fbbf24" stroke-width="2"/>
+<!-- cis alkene -->
+<rect x="10" y="85" width="150" height="65" rx="8" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="1.5"/>
+<text x="85" y="103" fill="#10b981" font-size="11" font-weight="700" text-anchor="middle">cis (Z) alkene</text>
+<text x="85" y="120" fill="#94a3b8" font-size="10" text-anchor="middle">H₂ / Lindlar</text>
+<text x="85" y="135" fill="#94a3b8" font-size="9" text-anchor="middle">(syn addition, stops)</text>
+<!-- trans alkene -->
+<rect x="195" y="85" width="150" height="65" rx="8" fill="rgba(167,139,250,0.08)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="270" y="103" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">trans (E) alkene</text>
+<text x="270" y="120" fill="#94a3b8" font-size="10" text-anchor="middle">Na or Li / NH₃(l)</text>
+<text x="270" y="135" fill="#94a3b8" font-size="9" text-anchor="middle">(dissolving metal, anti)</text>
+<!-- alkane -->
+<rect x="380" y="85" width="150" height="65" rx="8" fill="rgba(251,191,36,0.08)" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="455" y="103" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">alkane</text>
+<text x="455" y="120" fill="#94a3b8" font-size="10" text-anchor="middle">H₂ / Pd-C (excess)</text>
+<text x="455" y="135" fill="#94a3b8" font-size="9" text-anchor="middle">(full reduction)</text>
+<!-- Bottom note -->
+<text x="270" y="170" fill="#5eead4" font-size="10" text-anchor="middle">Same starting material, three reagents, three stereo outcomes</text>
+</svg></div>
 <h3>4. Addition reactions of alkynes</h3><p>Most alkene addition reactions (HX, X₂, hydration) also work on alkynes — just twice if you use excess reagent. Markovnikov rules still apply.</p>
 <div class="example"><b>Hydration of a terminal alkyne — the keto-enol surprise:</b><br>HC≡C–R + H₂O / H₂SO₄ / HgSO₄ → enol intermediate (CH₂=C(OH)–R) → tautomerizes to KETONE (CH₃–CO–R). The "alcohol on a double bond" (enol) is unstable; it rearranges to the carbonyl (keto form). Markovnikov places the OH on the more substituted carbon, so terminal alkynes give methyl ketones, not aldehydes. To get the aldehyde, use hydroboration (anti-Markovnikov) instead.</div>
 <h3>5. Oxidative cleavage</h3><p>Strong oxidants (KMnO₄/H₃O⁺ or O₃) cleave the C≡C completely, giving two carboxylic acids (or CO₂ from a terminal CH).</p>`,
@@ -987,7 +1072,46 @@ quiz:[
 
 m11:{title:"Electrophilic Aromatic Substitution",lead:"How to install groups onto a benzene ring — and how the existing groups dictate where the next one goes.",
 body:`<h3>Why benzene does substitution, not addition</h3><p>Alkenes do addition. Benzene does substitution. Why the difference? Because addition would destroy benzene's aromaticity (worth ~36 kcal/mol of stability), while substitution lets the ring keep its 6 π electrons. Benzene reluctantly forms a non-aromatic intermediate (a sigma complex), then loses an H⁺ to restore aromaticity. The net result: an H is replaced by a new group.</p>
-<h3>1. The general EAS mechanism (every reaction follows this)</h3><div class="concept"><b>Step 1:</b> An electrophile (E⁺) is generated, often with a Lewis acid catalyst.<br><b>Step 2:</b> The benzene π electrons attack E⁺, forming a non-aromatic <b>arenium ion</b> (sigma complex) with the new C–E bond and a positive charge delocalized over 3 ring carbons.<br><b>Step 3:</b> A base removes the H from the carbon now bearing E, restoring aromaticity. Net result: H replaced by E.</div>
+<h3>1. The general EAS mechanism (every reaction follows this)</h3><div class="concept"><b>Step 1:</b> An electrophile (E⁺) is generated, often with a Lewis acid catalyst.<br><b>Step 2:</b> The benzene π electrons attack E⁺, forming a non-aromatic <b>arenium ion</b> (sigma complex) with the new C–E bond and a positive charge delocalized over 3 ring carbons.<br><b>Step 3:</b> A base removes the H from the carbon now bearing E, restoring aromaticity. Net result: H replaced by E.
+<svg viewBox="0 0 580 160" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:580px">
+<text x="290" y="16" fill="#5eead4" font-size="12" font-weight="700" text-anchor="middle">EAS General Mechanism</text>
+<!-- Benzene -->
+<polygon points="60,60 85,45 115,45 140,60 115,75 85,75" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+<circle cx="100" cy="60" r="10" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<text x="100" y="95" fill="#e2e8f0" font-size="10" text-anchor="middle">benzene</text>
+<text x="100" y="107" fill="#10b981" font-size="9" text-anchor="middle">(aromatic)</text>
+<!-- Arrow + E+ -->
+<line x1="150" y1="60" x2="195" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="195,60 189,56 189,64" fill="#94a3b8"/>
+<text x="172" y="52" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">+ E⁺</text>
+<text x="172" y="120" fill="#94a3b8" font-size="8" text-anchor="middle">Step 1-2 (slow)</text>
+<text x="172" y="130" fill="#94a3b8" font-size="8" text-anchor="middle">rate-determining</text>
+<!-- Arenium ion -->
+<polygon points="230,60 255,45 285,45 310,60 285,75 255,75" fill="none" stroke="#fbbf24" stroke-width="2"/>
+<text x="270" y="64" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">⊕</text>
+<line x1="270" y1="40" x2="270" y2="28" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="260" y="25" fill="#e2e8f0" font-size="9">H</text>
+<text x="280" y="25" fill="#ef4444" font-size="9">E</text>
+<text x="270" y="95" fill="#fbbf24" font-size="10" text-anchor="middle">arenium ion</text>
+<text x="270" y="107" fill="#ef4444" font-size="9" text-anchor="middle">(NOT aromatic!)</text>
+<!-- Arrow 2 -->
+<line x1="320" y1="60" x2="365" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+<polygon points="365,60 359,56 359,64" fill="#94a3b8"/>
+<text x="342" y="52" fill="#a78bfa" font-size="10" font-weight="600" text-anchor="middle">− H⁺</text>
+<text x="342" y="120" fill="#94a3b8" font-size="8" text-anchor="middle">Step 3 (fast)</text>
+<text x="342" y="130" fill="#94a3b8" font-size="8" text-anchor="middle">restore arom.</text>
+<!-- Product -->
+<polygon points="400" y="60" fill="none"/>
+<polygon points="400,60 425,45 455,45 480,60 455,75 425,75" fill="none" stroke="#10b981" stroke-width="2"/>
+<circle cx="440" cy="60" r="10" fill="none" stroke="#10b981" stroke-width="1"/>
+<line x1="440" y1="40" x2="440" y2="28" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="440" y="24" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">E</text>
+<text x="440" y="95" fill="#e2e8f0" font-size="10" text-anchor="middle">product</text>
+<text x="440" y="107" fill="#10b981" font-size="9" text-anchor="middle">(aromatic again!)</text>
+<!-- Net result -->
+<rect x="140" y="140" width="300" height="18" rx="4" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="290" y="153" fill="#5eead4" font-size="10" font-weight="600" text-anchor="middle">Net: H replaced by E — substitution, not addition</text>
+</svg></div>
 <h3>2. The five core EAS reactions</h3><table><tr><th>Reaction</th><th>Reagents</th><th>Group added</th></tr>
 <tr><td>Halogenation</td><td>Cl₂/FeCl₃ or Br₂/FeBr₃</td><td>–Cl, –Br</td></tr>
 <tr><td>Nitration</td><td>HNO₃ + H₂SO₄</td><td>–NO₂</td></tr>
