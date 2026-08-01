@@ -385,10 +385,102 @@ quiz:[
 m5:{title:"Conformations & Chair Cyclohexane",lead:"How molecules wiggle in 3D space, and why bulky groups demand the equatorial seat.",
 body:`<h3>Why conformations matter</h3><p>A single bond can rotate freely. As it rotates, the molecule passes through different shapes called <b>conformations</b> — same molecule, same connectivity, just different 3D arrangements at any instant. Some conformations are more stable than others. Reactions happen from specific conformations, so understanding which ones a molecule prefers tells you which products will form.</p>
 <h3>1. Newman projections</h3><p>A Newman projection is a way of looking at a molecule down a specific C–C bond. The front carbon is shown as a dot (or small circle), and the back carbon as a larger circle. The three bonds from each carbon stick out at 120° angles.</p>
-<div class="concept"><b>Stability ranking for ethane and butane:</b><br><b>Anti (180°)</b> — most stable. Bulky groups on opposite sides, no steric clash.<br><b>Gauche (60°)</b> — staggered but bulky groups closer together. Slight steric strain.<br><b>Eclipsed (120°, 240°)</b> — bonds line up. Torsional strain from electrons in overlapping bonds repelling each other.<br><b>Fully eclipsed (0°, 360°)</b> — bulky groups directly overlap. Maximum strain.</div>
-<div class="example"><b>Butane along C2–C3:</b> The energy graph shows 3 minima (anti at 180°, gauche at 60° and 300°) and 3 maxima (fully eclipsed at 0°, partially eclipsed at 120° and 240°). The anti minimum is deeper than the gauche minima because the two methyls are as far apart as possible.</div>
+<div class="concept"><b>Stability ranking for ethane and butane:</b><br><b>Anti (180°)</b> — most stable. Bulky groups on opposite sides, no steric clash.<br><b>Gauche (60°)</b> — staggered but bulky groups closer together. Slight steric strain.<br><b>Eclipsed (120°, 240°)</b> — bonds line up. Torsional strain from electrons in overlapping bonds repelling each other.<br><b>Fully eclipsed (0°, 360°)</b> — bulky groups directly overlap. Maximum strain.
+<svg viewBox="0 0 620 340" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:620px">
+<text x="310" y="18" fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle">Butane Energy Diagram (rotation about C2–C3)</text>
+<!-- Axes -->
+<line x1="60" y1="280" x2="580" y2="280" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="60" y1="280" x2="60" y2="40" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="30" y="160" fill="#94a3b8" font-size="11" text-anchor="middle" transform="rotate(-90,30,160)">Potential Energy →</text>
+<text x="310" y="300" fill="#94a3b8" font-size="11" text-anchor="middle">Dihedral Angle (°)</text>
+<!-- X-axis labels -->
+<text x="80" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">0°</text>
+<text x="163" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">60°</text>
+<text x="247" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">120°</text>
+<text x="330" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">180°</text>
+<text x="413" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">240°</text>
+<text x="497" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">300°</text>
+<text x="560" y="295" fill="#94a3b8" font-size="10" text-anchor="middle">360°</text>
+<!-- Energy curve - smooth butane profile -->
+<path d="M80,60 C100,60 130,230 163,210 C190,195 210,82 247,82 C280,82 300,265 330,270 C360,265 380,82 413,82 C445,82 465,195 497,210 C525,230 545,60 560,60" fill="none" stroke="#5eead4" stroke-width="2.5"/>
+<!-- Peak labels -->
+<text x="80" y="50" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">fully</text>
+<text x="80" y="60" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">eclipsed</text>
+<line x1="80" y1="62" x2="80" y2="60" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2"/>
+<text x="247" y="72" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">eclipsed</text>
+<text x="413" y="72" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">eclipsed</text>
+<text x="560" y="50" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">fully</text>
+<text x="560" y="60" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">eclipsed</text>
+<!-- Trough labels -->
+<text x="163" y="228" fill="#a78bfa" font-size="10" font-weight="600" text-anchor="middle">gauche</text>
+<text x="330" y="268" fill="#10b981" font-size="11" font-weight="700" text-anchor="middle">ANTI</text>
+<text x="330" y="255" fill="#10b981" font-size="9" text-anchor="middle">most stable</text>
+<text x="497" y="228" fill="#a78bfa" font-size="10" font-weight="600" text-anchor="middle">gauche</text>
+<!-- Energy annotations -->
+<line x1="68" y1="270" x2="68" y2="210" stroke="#a78bfa" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="50" y="242" fill="#a78bfa" font-size="9" text-anchor="middle">3.8</text>
+<text x="50" y="252" fill="#a78bfa" font-size="8" text-anchor="middle">kJ/mol</text>
+<line x1="68" y1="270" x2="68" y2="60" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="50" y="170" fill="#ef4444" font-size="9" text-anchor="middle">19</text>
+<text x="50" y="180" fill="#ef4444" font-size="8" text-anchor="middle">kJ/mol</text>
+<!-- Newman projection mini-diagrams at key points -->
+<!-- Anti at 180° -->
+<circle cx="330" cy="320" r="8" fill="none" stroke="#10b981" stroke-width="1"/>
+<line x1="330" y1="312" x2="330" y2="305" stroke="#10b981" stroke-width="1.5"/>
+<text x="330" y="303" fill="#10b981" font-size="7" text-anchor="middle">CH₃</text>
+<line x1="330" y1="328" x2="330" y2="335" stroke="#10b981" stroke-width="1"/>
+<text x="330" y="340" fill="#10b981" font-size="7" text-anchor="middle">CH₃</text>
+<!-- Fully eclipsed at 0° -->
+<circle cx="80" cy="320" r="8" fill="none" stroke="#ef4444" stroke-width="1"/>
+<line x1="80" y1="312" x2="80" y2="305" stroke="#ef4444" stroke-width="1.5"/>
+<text x="80" y="303" fill="#ef4444" font-size="7" text-anchor="middle">CH₃+CH₃</text>
+</svg></div>
+<div class="example"><b>Butane along C2–C3:</b> The energy graph above shows 3 minima (anti at 180°, gauche at 60° and 300°) and 3 maxima (fully eclipsed at 0°/360°, partially eclipsed at 120° and 240°). The anti minimum is the deepest — methyls are as far apart as possible (180°). The fully eclipsed peaks are the highest — methyls are directly on top of each other (0°).</div>
 <h3>2. Cyclohexane: the chair</h3><p>Cyclohexane is the most important ring in organic chemistry — found in steroids, sugars, terpenes, drugs. It's NOT flat. Flat cyclohexane would have 120° bond angles (sp³ wants 109.5°) and all H's eclipsed. Instead, it puckers into a <b>chair conformation</b>: every bond angle is exactly 109.5°, every adjacent H pair is staggered. Zero strain.</p>
-<div class="concept"><b>Axial vs equatorial bonds:</b><br><b>Axial bonds</b> point straight up or straight down, perpendicular to the average ring plane. They alternate up-down-up-down around the ring.<br><b>Equatorial bonds</b> point outward, slightly above or below horizontal. They alternate too.<br>Each ring carbon has exactly one axial bond and one equatorial bond.</div>
+<div class="concept"><b>Axial vs equatorial bonds:</b><br><b>Axial bonds</b> point straight up or straight down, perpendicular to the average ring plane. They alternate up-down-up-down around the ring.<br><b>Equatorial bonds</b> point outward, slightly above or below horizontal. They alternate too.<br>Each ring carbon has exactly one axial bond and one equatorial bond.
+<svg viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:560px">
+<text x="280" y="18" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">Chair Conformation: Axial vs Equatorial</text>
+<!-- Chair skeleton -->
+<polygon points="170,120 230,80 340,80 400,120 340,160 230,160" fill="none" stroke="#e2e8f0" stroke-width="2.5"/>
+<!-- Carbon labels -->
+<text x="160" y="124" fill="#94a3b8" font-size="10" text-anchor="end">C4</text>
+<text x="224" y="74" fill="#94a3b8" font-size="10" text-anchor="end">C5</text>
+<text x="348" y="74" fill="#94a3b8" font-size="10">C6</text>
+<text x="410" y="124" fill="#94a3b8" font-size="10">C1</text>
+<text x="348" y="170" fill="#94a3b8" font-size="10">C2</text>
+<text x="224" y="170" fill="#94a3b8" font-size="10" text-anchor="end">C3</text>
+<!-- Axial bonds (up/down alternating) -->
+<line x1="400" y1="120" x2="400" y2="78" stroke="#ef4444" stroke-width="2"/>
+<text x="400" y="72" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↑</text>
+<line x1="340" y1="80" x2="340" y2="42" stroke="#ef4444" stroke-width="2"/>
+<text x="340" y="36" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↑</text>
+<line x1="230" y1="80" x2="230" y2="42" stroke="#ef4444" stroke-width="2"/>
+<text x="230" y="36" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↑</text>
+<line x1="170" y1="120" x2="170" y2="162" stroke="#ef4444" stroke-width="2"/>
+<text x="170" y="176" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↓</text>
+<line x1="230" y1="160" x2="230" y2="198" stroke="#ef4444" stroke-width="2"/>
+<text x="230" y="212" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↓</text>
+<line x1="340" y1="160" x2="340" y2="198" stroke="#ef4444" stroke-width="2"/>
+<text x="340" y="212" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">ax↓</text>
+<!-- Equatorial bonds -->
+<line x1="400" y1="120" x2="440" y2="140" stroke="#5eead4" stroke-width="2"/>
+<text x="452" y="144" fill="#5eead4" font-size="10" font-weight="600">eq</text>
+<line x1="340" y1="80" x2="380" y2="62" stroke="#5eead4" stroke-width="2"/>
+<text x="392" y="60" fill="#5eead4" font-size="10" font-weight="600">eq</text>
+<line x1="230" y1="80" x2="190" y2="62" stroke="#5eead4" stroke-width="2"/>
+<text x="178" y="60" fill="#5eead4" font-size="10" font-weight="600" text-anchor="end">eq</text>
+<line x1="170" y1="120" x2="130" y2="100" stroke="#5eead4" stroke-width="2"/>
+<text x="118" y="98" fill="#5eead4" font-size="10" font-weight="600" text-anchor="end">eq</text>
+<line x1="230" y1="160" x2="190" y2="180" stroke="#5eead4" stroke-width="2"/>
+<text x="178" y="186" fill="#5eead4" font-size="10" font-weight="600" text-anchor="end">eq</text>
+<line x1="340" y1="160" x2="380" y2="180" stroke="#5eead4" stroke-width="2"/>
+<text x="392" y="184" fill="#5eead4" font-size="10" font-weight="600">eq</text>
+<!-- Legend -->
+<line x1="440" y1="18" x2="470" y2="18" stroke="#ef4444" stroke-width="2.5"/>
+<text x="478" y="22" fill="#ef4444" font-size="10">axial (up/down)</text>
+<line x1="440" y1="32" x2="470" y2="32" stroke="#5eead4" stroke-width="2.5"/>
+<text x="478" y="36" fill="#5eead4" font-size="10">equatorial (outward)</text>
+</svg></div>
 <h3>3. Ring flipping</h3><div class="concept"><b>The ring flip:</b> A chair can interconvert with another chair through a higher-energy boat-like intermediate. When it flips, every axial bond becomes equatorial, and every equatorial bond becomes axial. Up groups stay up, down groups stay down — but their axial/equatorial label switches.</div>
 <div class="tip">⭐ <b>Golden rule:</b> Bulky substituents prefer the EQUATORIAL position. Why? In the axial position, a bulky group bumps into the two other axial groups on the same face (1,3-diaxial interactions). Equatorial avoids that crowding. The bigger the substituent, the stronger the preference.</div>
 <h3>4. Predicting the more stable chair</h3><p>For a multi-substituted cyclohexane:</p><ol><li>Draw both chair conformations.</li><li>Count how many substituents are equatorial vs axial in each.</li><li>The chair with MORE bulky groups equatorial is more stable.</li><li>If a tert-butyl group is present, it ALWAYS goes equatorial — it's so bulky it locks the ring in that conformation.</li></ol>
