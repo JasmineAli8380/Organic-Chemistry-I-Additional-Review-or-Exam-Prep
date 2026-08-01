@@ -117,7 +117,70 @@ welcome:`<div class="welcome"><h2>Master Organic Chemistry I</h2><p style="color
 m1:{title:"Structure & Bonding",lead:"Atoms, orbitals, hybridization, polarity — the foundation everything else rests on.",
 body:`<h3>Why this module matters</h3><p>Every reaction you'll learn comes back to electrons: where they are, where they want to go, and how strongly atoms hold them. If you understand bonding deeply, mechanisms stop being memorization and start feeling inevitable.</p>
 <h3>1. Atomic orbitals — the rooms electrons live in</h3><p>Electrons don't orbit the nucleus like planets. They occupy <b>orbitals</b> — 3D regions of probability. The ones that matter for organic chemistry are <b>s</b> (spherical) and <b>p</b> (dumbbell-shaped, three of them: pₓ, pᵧ, p_z).</p><p>Carbon's ground state has 2 electrons in 1s, 2 in 2s, and 2 in 2p (one each in two of the three p orbitals). That would predict carbon makes only 2 bonds. But carbon makes 4. Why? <b>Hybridization.</b></p>
-<h3>2. Hybridization — mixing orbitals to make better bonds</h3><div class="concept"><div class="concept-title">The 30-second rule</div>Count electron groups (bonds + lone pairs) on the atom. A double or triple bond counts as ONE group.<ul><li><b>4 groups → sp³</b> (tetrahedral, 109.5°)</li><li><b>3 groups → sp²</b> (trigonal planar, 120°), one unhybridized p orbital left over for π bonding</li><li><b>2 groups → sp</b> (linear, 180°), two unhybridized p orbitals for two π bonds</li></ul></div>
+<h3>2. Hybridization — mixing orbitals to make better bonds</h3><div class="concept"><div class="concept-title">The 30-second rule</div>Count electron groups (bonds + lone pairs) on the atom. A double or triple bond counts as ONE group.<ul><li><b>4 groups → sp³</b> (tetrahedral, 109.5°)</li><li><b>3 groups → sp²</b> (trigonal planar, 120°), one unhybridized p orbital left over for π bonding</li><li><b>2 groups → sp</b> (linear, 180°), two unhybridized p orbitals for two π bonds</li></ul>
+<svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:600px">
+<text x="300" y="18" fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle">Hybridization at a Glance</text>
+<!-- sp3 column -->
+<rect x="15" y="30" width="180" height="240" rx="10" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="105" y="52" fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle">sp³</text>
+<text x="105" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">4 groups → tetrahedral</text>
+<text x="105" y="82" fill="#94a3b8" font-size="10" text-anchor="middle">109.5° angles</text>
+<!-- Tetrahedral shape -->
+<line x1="105" y1="140" x2="105" y2="100" stroke="#e2e8f0" stroke-width="2"/>
+<line x1="105" y1="140" x2="60" y2="170" stroke="#e2e8f0" stroke-width="2"/>
+<line x1="105" y1="140" x2="150" y2="170" stroke="#e2e8f0" stroke-width="2"/>
+<polygon points="105,140 120,180 130,180" fill="#e2e8f0" opacity="0.4"/>
+<circle cx="105" cy="140" r="4" fill="#5eead4"/>
+<text x="105" y="96" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="52" y="180" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="158" y="180" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="135" y="192" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="105" y="210" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">CH₄ (methane)</text>
+<text x="105" y="228" fill="#94a3b8" font-size="9" text-anchor="middle">s + 3p → 4 sp³ hybrids</text>
+<text x="105" y="242" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">0 leftover p orbitals</text>
+<text x="105" y="256" fill="#94a3b8" font-size="9" text-anchor="middle">→ no π bonds possible</text>
+<!-- sp2 column -->
+<rect x="210" y="30" width="180" height="240" rx="10" fill="rgba(167,139,250,0.06)" stroke="#a78bfa" stroke-width="1"/>
+<text x="300" y="52" fill="#a78bfa" font-size="14" font-weight="700" text-anchor="middle">sp²</text>
+<text x="300" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">3 groups → trigonal planar</text>
+<text x="300" y="82" fill="#94a3b8" font-size="10" text-anchor="middle">120° angles</text>
+<!-- Trigonal planar -->
+<line x1="300" y1="140" x2="300" y2="100" stroke="#e2e8f0" stroke-width="2"/>
+<line x1="300" y1="140" x2="255" y2="170" stroke="#e2e8f0" stroke-width="2"/>
+<line x1="300" y1="140" x2="345" y2="170" stroke="#e2e8f0" stroke-width="2"/>
+<circle cx="300" cy="140" r="4" fill="#a78bfa"/>
+<!-- p orbital sticking up -->
+<ellipse cx="300" cy="120" rx="6" ry="18" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="1"/>
+<ellipse cx="300" cy="160" rx="6" ry="18" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="1"/>
+<text x="315" y="110" fill="#fbbf24" font-size="9" font-weight="600">← p orbital</text>
+<text x="300" y="96" fill="#e2e8f0" font-size="10" text-anchor="middle">O</text>
+<text x="247" y="180" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="353" y="180" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="300" y="210" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">H₂C=O (formaldehyde)</text>
+<text x="300" y="228" fill="#94a3b8" font-size="9" text-anchor="middle">s + 2p → 3 sp² hybrids</text>
+<text x="300" y="242" fill="#fbbf24" font-size="10" font-weight="600" text-anchor="middle">1 leftover p orbital</text>
+<text x="300" y="256" fill="#94a3b8" font-size="9" text-anchor="middle">→ 1 π bond (the C=O)</text>
+<!-- sp column -->
+<rect x="405" y="30" width="180" height="240" rx="10" fill="rgba(251,191,36,0.06)" stroke="#fbbf24" stroke-width="1"/>
+<text x="495" y="52" fill="#fbbf24" font-size="14" font-weight="700" text-anchor="middle">sp</text>
+<text x="495" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">2 groups → linear</text>
+<text x="495" y="82" fill="#94a3b8" font-size="10" text-anchor="middle">180° angles</text>
+<!-- Linear -->
+<line x1="440" y1="140" x2="550" y2="140" stroke="#e2e8f0" stroke-width="2"/>
+<circle cx="495" cy="140" r="4" fill="#fbbf24"/>
+<!-- Two p orbitals -->
+<ellipse cx="495" cy="120" rx="6" ry="18" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+<ellipse cx="495" cy="160" rx="6" ry="18" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+<ellipse cx="478" cy="140" rx="18" ry="6" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+<ellipse cx="512" cy="140" rx="18" ry="6" fill="rgba(239,68,68,0.2)" stroke="#ef4444" stroke-width="1"/>
+<text x="530" y="115" fill="#ef4444" font-size="9" font-weight="600">← 2 p orbitals</text>
+<text x="432" y="148" fill="#e2e8f0" font-size="10" text-anchor="middle">H</text>
+<text x="558" y="148" fill="#e2e8f0" font-size="10" text-anchor="middle">N</text>
+<text x="495" y="210" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">HC≡N (hydrogen cyanide)</text>
+<text x="495" y="228" fill="#94a3b8" font-size="9" text-anchor="middle">s + 1p → 2 sp hybrids</text>
+<text x="495" y="242" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">2 leftover p orbitals</text>
+<text x="495" y="256" fill="#94a3b8" font-size="9" text-anchor="middle">→ 2 π bonds (the ≡)</text>
+</svg></div>
 <div class="example"><b>Worked example — methane (CH₄):</b> Carbon has 4 bonds, no lone pairs → 4 groups → sp³ → tetrahedral, 109.5° angles.<br><br><b>Worked example — formaldehyde (H₂C=O):</b> The carbon has 2 single bonds (to H) + 1 double bond (to O) = 3 groups → sp² → trigonal planar. The oxygen has 1 double bond + 2 lone pairs = 3 groups → also sp².<br><br><b>Worked example — HC≡N:</b> The carbon has 1 single bond (to H) + 1 triple bond (to N) = 2 groups → sp → linear, 180°.</div>
 <h3>3. Sigma vs pi bonds</h3><p>A <b>sigma (σ) bond</b> is end-on overlap — strong, free to rotate. A <b>pi (π) bond</b> is side-by-side overlap of p orbitals — weaker, locks rotation. A double bond = 1 σ + 1 π. A triple bond = 1 σ + 2 π. This is why alkenes have cis/trans isomers (no rotation) but alkanes don't.</p>
 <h3>4. Electronegativity & polarity</h3><p>Electronegativity is how strongly an atom pulls bonding electrons toward itself. Trend: <b>F > O > N > Cl > Br > C ≈ H</b>. When two atoms with different electronegativities bond, the bond is polar — the more electronegative atom gets a partial negative charge (δ⁻), the other gets δ⁺.</p>
@@ -619,7 +682,52 @@ body:`<h3>What is aromaticity?</h3><p>Aromaticity is a special kind of stability
 <h3>1. The four requirements for aromaticity</h3><div class="concept"><b>A molecule is aromatic if and only if ALL FOUR are true:</b><ol><li><b>Cyclic</b> — the conjugated system forms a closed ring.</li><li><b>Planar</b> — all ring atoms lie in one plane (allows continuous overlap).</li><li><b>Fully conjugated</b> — every atom in the ring has a p-orbital (sp² or sp hybridized), so p-orbitals overlap continuously around the ring.</li><li><b>4n+2 π electrons</b> in the ring (Hückel's rule). For n = 0, 1, 2, 3... that's 2, 6, 10, 14, 18 π electrons.</li></ol>If even ONE requirement fails, the molecule is NOT aromatic.</div>
 <h3>2. Hückel's 4n+2 rule — how to count</h3><p>Count only the π electrons that are part of the cyclic conjugated system:</p><ul><li>Each C=C in the ring contributes 2 π electrons.</li><li>A lone pair on a heteroatom (N, O, S) in the ring counts ONLY IF that lone pair sits in a p-orbital perpendicular to the ring (i.e., it's part of the π system).</li><li>An empty p-orbital contributes 0 electrons but still completes the conjugation.</li><li>A C=O outside the ring doesn't count toward ring electrons.</li></ul>
 <div class="example"><b>Benzene:</b> 3 C=C in the ring → 6 π electrons. 6 = 4(1)+2 → aromatic. ✓<br><br><b>Pyridine:</b> 6-membered ring with 1 N replacing CH. The N lone pair is in an sp² orbital IN the plane of the ring (not perpendicular), so it does NOT contribute to the π system. Three C=C and one C=N give 6 π electrons → aromatic. ✓<br><br><b>Pyrrole:</b> 5-membered ring with N–H. The N lone pair must go in the perpendicular p-orbital (the sp² orbitals are used by N–H, N–C, N–C). That lone pair (2 e⁻) plus two C=C (4 e⁻) = 6 π electrons → aromatic. ✓<br><br><b>Cyclopentadienyl anion:</b> 5-membered ring with one CH⁻. The CH⁻ carbon is sp² with a lone pair in its p-orbital. 2 C=C (4 e⁻) + 2 from the lone pair = 6 e⁻ → aromatic. ✓<br><br><b>Cyclopentadienyl cation:</b> Same ring but the C is now positive (empty p-orbital). 2 C=C (4 e⁻) + 0 from the empty p-orbital = 4 e⁻ → 4n with n=1 → ANTI-aromatic (4n electrons in a continuous cyclic π system is destabilizing).</div>
-<h3>3. Three categories</h3><div class="concept"><b>Aromatic:</b> cyclic, planar, fully conjugated, 4n+2 π electrons. Extra stable.<br><b>Anti-aromatic:</b> cyclic, planar, fully conjugated, 4n π electrons. Extra UNSTABLE — molecules avoid this by puckering out of planarity if they can.<br><b>Non-aromatic:</b> fails one of the structural requirements (not cyclic, not planar, or has sp³ carbon breaking conjugation). Just an ordinary molecule, neither stabilized nor destabilized.</div>
+<h3>3. Three categories</h3><div class="concept"><b>Aromatic:</b> cyclic, planar, fully conjugated, 4n+2 π electrons. Extra stable.<br><b>Anti-aromatic:</b> cyclic, planar, fully conjugated, 4n π electrons. Extra UNSTABLE — molecules avoid this by puckering out of planarity if they can.<br><b>Non-aromatic:</b> fails one of the structural requirements (not cyclic, not planar, or has sp³ carbon breaking conjugation). Just an ordinary molecule, neither stabilized nor destabilized.
+<svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:600px">
+<text x="300" y="18" fill="#5eead4" font-size="14" font-weight="700" text-anchor="middle">Aromatic vs Anti-aromatic vs Non-aromatic</text>
+<!-- AROMATIC column -->
+<rect x="10" y="30" width="180" height="280" rx="10" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="1.5"/>
+<text x="100" y="52" fill="#10b981" font-size="14" font-weight="700" text-anchor="middle">AROMATIC</text>
+<text x="100" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">4n+2 π electrons</text>
+<text x="100" y="82" fill="#10b981" font-size="10" text-anchor="middle">extra STABLE</text>
+<!-- Benzene -->
+<polygon points="100,110 130,127 130,161 100,178 70,161 70,127" fill="none" stroke="#10b981" stroke-width="2"/>
+<circle cx="100" cy="144" r="16" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="3 2"/>
+<text x="100" y="198" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">benzene</text>
+<text x="100" y="212" fill="#10b981" font-size="11" text-anchor="middle">6 π e⁻ (n=1) ✓</text>
+<!-- Pyrrole -->
+<polygon points="100,240 128,250 118,278 82,278 72,250" fill="none" stroke="#10b981" stroke-width="2"/>
+<text x="100" y="232" fill="#a78bfa" font-size="10" font-weight="600" text-anchor="middle">N-H</text>
+<text x="100" y="296" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">pyrrole</text>
+<text x="100" y="308" fill="#10b981" font-size="11" text-anchor="middle">6 π e⁻ (n=1) ✓</text>
+<!-- ANTI-AROMATIC column -->
+<rect x="210" y="30" width="180" height="280" rx="10" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="300" y="52" fill="#ef4444" font-size="14" font-weight="700" text-anchor="middle">ANTI-AROMATIC</text>
+<text x="300" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">4n π electrons</text>
+<text x="300" y="82" fill="#ef4444" font-size="10" text-anchor="middle">extra UNSTABLE</text>
+<!-- Cyclobutadiene -->
+<rect x="275" y="115" width="50" height="50" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="300" y="185" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">cyclobutadiene</text>
+<text x="300" y="199" fill="#ef4444" font-size="11" text-anchor="middle">4 π e⁻ (n=1) ✗</text>
+<!-- Cp cation -->
+<polygon points="300,240 328,250 318,278 282,278 272,250" fill="none" stroke="#ef4444" stroke-width="2"/>
+<text x="300" y="232" fill="#ef4444" font-size="10" font-weight="600" text-anchor="middle">⊕</text>
+<text x="300" y="296" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">Cp cation</text>
+<text x="300" y="308" fill="#ef4444" font-size="11" text-anchor="middle">4 π e⁻ (n=1) ✗</text>
+<!-- NON-AROMATIC column -->
+<rect x="410" y="30" width="180" height="280" rx="10" fill="rgba(148,163,184,0.06)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="500" y="52" fill="#94a3b8" font-size="14" font-weight="700" text-anchor="middle">NON-AROMATIC</text>
+<text x="500" y="68" fill="#94a3b8" font-size="10" text-anchor="middle">fails a structural test</text>
+<text x="500" y="82" fill="#94a3b8" font-size="10" text-anchor="middle">just ordinary</text>
+<!-- Cyclohexadiene -->
+<polygon points="500,110 530,127 530,161 500,178 470,161 470,127" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="500" y="198" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">1,3-cyclohexadiene</text>
+<text x="500" y="212" fill="#94a3b8" font-size="11" text-anchor="middle">has sp³ C → broken</text>
+<!-- Cyclooctatetraene -->
+<polygon points="500,235 528,243 536,268 520,288 488,288 472,268 480,243" fill="none" stroke="#94a3b8" stroke-width="2"/>
+<text x="500" y="296" fill="#e2e8f0" font-size="10" font-weight="600" text-anchor="middle">cyclooctatetraene</text>
+<text x="500" y="308" fill="#94a3b8" font-size="10" text-anchor="middle">tub-shaped → not planar</text>
+</svg></div>
 <div class="example"><b>Cyclooctatetraene (COT):</b> 8-membered ring, 4 C=C, 8 π electrons. If planar: 8 = 4n with n=2 → would be anti-aromatic (very unstable). Solution: the molecule puckers into a tub shape, breaking planarity. Now it's non-aromatic and behaves like a normal alkene system. Nature finds a way to escape anti-aromaticity.</div>
 <h3>4. Why aromatic compounds are stable</h3><p>The 6 π electrons of benzene fill three bonding molecular orbitals completely (the three lowest-energy π MOs). All electrons are paired in stable, low-energy orbitals. With 4n electrons, you'd be forced to put 2 unpaired electrons in non-bonding orbitals — much less stable. The 4n+2 rule comes from the math of how the molecular orbitals fill in cyclic π systems.</p>
 <h3>5. Heterocyclic aromatics — common ones to memorize</h3><table><tr><th>Compound</th><th>Ring</th><th>π electrons</th></tr>
@@ -695,14 +803,105 @@ body:`<h3>The structure detective\'s toolkit</h3><p>When chemists isolate an unk
 <tr><td>1670–1780 strong</td><td>C=O (carbonyl)</td><td>very strong, unmistakable</td></tr>
 <tr><td>1600 + 1500</td><td>aromatic C=C</td><td>two medium peaks</td></tr>
 <tr><td>1540</td><td>NO₂</td><td>strong</td></tr></table>
-<div class="tip">⭐ <b>Quick IR scan strategy:</b> Look for these in order: (1) Anything in 3200–3650? Could be O–H or N–H. (2) Anything strong near 1700? That\'s C=O — and which type depends on what else is nearby. (3) Aromatic? Check 1600/1500 and 3030. (4) Triple bond? Look near 2200.</div>
+<div class="tip">⭐ <b>Quick IR scan strategy:</b> Look for these in order: (1) Anything in 3200–3650? Could be O–H or N–H. (2) Anything strong near 1700? That\'s C=O — and which type depends on what else is nearby. (3) Aromatic? Check 1600/1500 and 3030. (4) Triple bond? Look near 2200.
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:600px">
+<text x="300" y="16" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">IR Quick Reference — Key Regions</text>
+<!-- Axis -->
+<line x1="30" y1="170" x2="580" y2="170" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="300" y="195" fill="#94a3b8" font-size="10" text-anchor="middle">Wavenumber (cm⁻¹) →  higher = stronger bond</text>
+<!-- Tick marks and labels -->
+<line x1="55" y1="170" x2="55" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="55" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">1500</text>
+<line x1="140" y1="170" x2="140" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="140" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">1700</text>
+<line x1="225" y1="170" x2="225" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="225" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">2200</text>
+<line x1="335" y1="170" x2="335" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="335" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">2850</text>
+<line x1="400" y1="170" x2="400" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="400" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">3000</text>
+<line x1="465" y1="170" x2="465" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="465" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">3300</text>
+<line x1="545" y1="170" x2="545" y2="175" stroke="#94a3b8" stroke-width="1"/>
+<text x="545" y="185" fill="#94a3b8" font-size="9" text-anchor="middle">3650</text>
+<!-- C=O region -->
+<rect x="115" y="30" width="55" height="40" rx="4" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="142" y="47" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">C=O</text>
+<text x="142" y="60" fill="#ef4444" font-size="8" text-anchor="middle">1670-1780</text>
+<text x="142" y="82" fill="#94a3b8" font-size="8" text-anchor="middle">STRONG!</text>
+<!-- Triple bond region -->
+<rect x="205" y="30" width="45" height="40" rx="4" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="227" y="47" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">C≡C</text>
+<text x="227" y="60" fill="#a78bfa" font-size="8" text-anchor="middle">C≡N</text>
+<text x="227" y="82" fill="#94a3b8" font-size="8" text-anchor="middle">~2200</text>
+<!-- C-H region -->
+<rect x="330" y="30" width="75" height="40" rx="4" fill="rgba(148,163,184,0.15)" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="367" y="47" fill="#e2e8f0" font-size="10" font-weight="700" text-anchor="middle">C–H</text>
+<text x="367" y="60" fill="#94a3b8" font-size="8" text-anchor="middle">2850-3100</text>
+<text x="367" y="82" fill="#94a3b8" font-size="8" text-anchor="middle">sp³ &lt;3000</text>
+<text x="367" y="92" fill="#94a3b8" font-size="8" text-anchor="middle">sp² &gt;3000</text>
+<!-- O-H / N-H region -->
+<rect x="430" y="30" width="135" height="40" rx="4" fill="rgba(94,234,212,0.15)" stroke="#5eead4" stroke-width="1.5"/>
+<text x="497" y="47" fill="#5eead4" font-size="10" font-weight="700" text-anchor="middle">O–H / N–H</text>
+<text x="497" y="60" fill="#5eead4" font-size="8" text-anchor="middle">3200-3650</text>
+<text x="497" y="82" fill="#5eead4" font-size="8" text-anchor="middle">broad = O–H</text>
+<text x="497" y="92" fill="#5eead4" font-size="8" text-anchor="middle">sharp = N–H</text>
+<!-- Acid O-H extended bar -->
+<rect x="285" y="105" width="220" height="28" rx="4" fill="rgba(251,191,36,0.1)" stroke="#fbbf24" stroke-width="1" stroke-dasharray="4 2"/>
+<text x="395" y="118" fill="#fbbf24" font-size="9" font-weight="600" text-anchor="middle">acid O–H: VERY broad 2500–3300 (overlaps C–H!)</text>
+<!-- ≡C-H spike -->
+<line x1="465" y1="140" x2="465" y2="155" stroke="#a78bfa" stroke-width="2"/>
+<text x="465" y="165" fill="#a78bfa" font-size="8" font-weight="600" text-anchor="middle">≡C–H sharp 3300</text>
+</svg></div>
 <div class="example"><b>Worked example:</b> An unknown shows a strong broad peak at 2500–3100, plus a very strong sharp peak at 1710 cm⁻¹. Diagnosis: the very broad O–H signature is unique to a carboxylic acid (alcohols are higher and narrower). The 1710 confirms a C=O. → carboxylic acid. ✓</div>
 <h3>2. Mass spectrometry — \"what does it weigh, and what falls off?\"</h3><p>A mass spectrometer ionizes the molecule (knocking off an electron) and then breaks it apart, measuring the masses of all the resulting fragments. Two key data points:</p><ul><li><b>Molecular ion (M⁺):</b> the unbroken ionized molecule. Its m/z value = molecular weight in amu.</li><li><b>Fragment peaks:</b> smaller pieces from cleavage. The differences (M − fragment) tell you what was lost.</li></ul>
 <div class="concept"><b>Common losses to memorize:</b><br>−15: loss of CH₃<br>−17: loss of OH<br>−18: loss of H₂O<br>−29: loss of CHO or C₂H₅<br>−43: loss of C₃H₇ or CH₃CO (acetyl)<br>−45: loss of CO₂H or C₂H₅O</div>
 <div class="example"><b>Worked example:</b> Unknown has M⁺ = 102 and a strong fragment at m/z = 73 (loss of 29). What is it likely? Loss of 29 = loss of CHO (aldehyde) or C₂H₅ (ethyl). M = 102 fits C₆H₁₂O (102 g/mol = 6×12 + 12 + 16). One reasonable candidate: hexan-3-ol — α-cleavage gives a stable cation by losing the ethyl group, fitting the loss of 29.</div>
 <h3>3. ¹H NMR — \"how many H environments and what are they near?\"</h3><p>Hydrogen NMR (proton NMR) is the most powerful structural tool you\'ll learn. Each unique H environment gives a signal. From a ¹H NMR spectrum you read four things:</p><div class="concept"><b>(1) Number of signals</b> = number of chemically distinct H environments. Equivalent H\'s (related by symmetry or by free rotation, like the 3 H\'s of a CH₃) give one signal.<br><br><b>(2) Chemical shift (δ, in ppm)</b> tells you the chemical neighborhood of each H. Electron-withdrawing neighbors push the signal downfield (higher ppm); electron-rich environments push it upfield (lower ppm).<br><br><b>(3) Integration</b> tells you the RELATIVE number of H\'s producing each signal. A 3:2:1 integration ratio could mean 3 H\'s : 2 H\'s : 1 H, or 6:4:2, etc.<br><br><b>(4) Splitting (multiplicity)</b> tells you how many H neighbors are on the ADJACENT carbon. The famous (n+1) rule: a peak split by n equivalent neighbors gives n+1 lines.</div>
 <table><tr><th>δ (ppm)</th><th>Type of H</th></tr><tr><td>0.7–1.5</td><td>alkyl C–H (CH₃, CH₂, CH)</td></tr><tr><td>1.5–2.5</td><td>allylic, α to C=O</td></tr><tr><td>2.0–4.0</td><td>C–H next to electronegative atom</td></tr><tr><td>3.3–4.0</td><td>C–H next to O (alcohol, ether)</td></tr><tr><td>4.5–6.5</td><td>vinyl (=C–H)</td></tr><tr><td>6.5–8.0</td><td>aromatic</td></tr><tr><td>9–10</td><td>aldehyde C–H</td></tr><tr><td>10–13</td><td>carboxylic acid O–H</td></tr><tr><td>0.5–5.0 variable</td><td>alcohol/amine O–H, N–H (often broad)</td></tr></table>
-<div class="example"><b>The classic ethyl group pattern:</b> An ethyl group (–CH₂CH₃) attached to anything else gives two signals in NMR. The CH₃ (3H) sees 2 neighbors on the adjacent CH₂ → splits into 3 lines (n+1 = 3) → triplet. The CH₂ (2H) sees 3 neighbors on the adjacent CH₃ → splits into 4 lines → quartet. So an ethyl always shows up as triplet (3H) + quartet (2H). Once you see that pattern, you know an ethyl is there.</div>
+<div class="example"><b>The classic ethyl group pattern:</b> An ethyl group (–CH₂CH₃) attached to anything else gives two signals in NMR. The CH₃ (3H) sees 2 neighbors on the adjacent CH₂ → splits into 3 lines (n+1 = 3) → triplet. The CH₂ (2H) sees 3 neighbors on the adjacent CH₃ → splits into 4 lines → quartet. So an ethyl always shows up as triplet (3H) + quartet (2H). Once you see that pattern, you know an ethyl is there.
+<svg viewBox="0 0 600 160" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:600px">
+<text x="300" y="16" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">¹H NMR Chemical Shift Scale (δ ppm)</text>
+<!-- Axis -->
+<line x1="30" y1="90" x2="570" y2="90" stroke="#94a3b8" stroke-width="1.5"/>
+<!-- ppm labels (higher ppm = left = downfield) -->
+<text x="50" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">12</text>
+<text x="100" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">10</text>
+<text x="150" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">8</text>
+<text x="200" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">7</text>
+<text x="275" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">5</text>
+<text x="350" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">3.5</text>
+<text x="425" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">2.5</text>
+<text x="500" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">1.5</text>
+<text x="555" y="108" fill="#94a3b8" font-size="10" text-anchor="middle">0</text>
+<!-- downfield/upfield arrows -->
+<text x="80" y="125" fill="#ef4444" font-size="9" text-anchor="middle">← downfield (deshielded)</text>
+<text x="500" y="125" fill="#5eead4" font-size="9" text-anchor="middle">upfield (shielded) →</text>
+<!-- Zones -->
+<rect x="42" y="30" width="58" height="28" rx="4" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="1"/>
+<text x="71" y="42" fill="#ef4444" font-size="8" font-weight="600" text-anchor="middle">COOH</text>
+<text x="71" y="53" fill="#ef4444" font-size="7" text-anchor="middle">10-12</text>
+<rect x="90" y="30" width="40" height="28" rx="4" fill="rgba(251,191,36,0.15)" stroke="#fbbf24" stroke-width="1"/>
+<text x="110" y="42" fill="#fbbf24" font-size="8" font-weight="600" text-anchor="middle">CHO</text>
+<text x="110" y="53" fill="#fbbf24" font-size="7" text-anchor="middle">9-10</text>
+<rect x="145" y="30" width="80" height="28" rx="4" fill="rgba(167,139,250,0.15)" stroke="#a78bfa" stroke-width="1"/>
+<text x="185" y="42" fill="#a78bfa" font-size="8" font-weight="600" text-anchor="middle">Ar–H</text>
+<text x="185" y="53" fill="#a78bfa" font-size="7" text-anchor="middle">6.5-8</text>
+<rect x="250" y="30" width="60" height="28" rx="4" fill="rgba(244,114,182,0.15)" stroke="#f472b6" stroke-width="1"/>
+<text x="280" y="42" fill="#f472b6" font-size="8" font-weight="600" text-anchor="middle">=C–H</text>
+<text x="280" y="53" fill="#f472b6" font-size="7" text-anchor="middle">4.5-6.5</text>
+<rect x="320" y="30" width="70" height="28" rx="4" fill="rgba(94,234,212,0.15)" stroke="#5eead4" stroke-width="1"/>
+<text x="355" y="42" fill="#5eead4" font-size="8" font-weight="600" text-anchor="middle">C–H next O</text>
+<text x="355" y="53" fill="#5eead4" font-size="7" text-anchor="middle">3.3-4.0</text>
+<rect x="400" y="30" width="60" height="28" rx="4" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="1"/>
+<text x="430" y="42" fill="#60a5fa" font-size="8" font-weight="600" text-anchor="middle">α to C=O</text>
+<text x="430" y="53" fill="#60a5fa" font-size="7" text-anchor="middle">2.0-2.5</text>
+<rect x="475" y="30" width="90" height="28" rx="4" fill="rgba(148,163,184,0.15)" stroke="#94a3b8" stroke-width="1"/>
+<text x="520" y="42" fill="#e2e8f0" font-size="8" font-weight="600" text-anchor="middle">alkyl C–H</text>
+<text x="520" y="53" fill="#94a3b8" font-size="7" text-anchor="middle">0.7-1.5</text>
+<!-- Splitting reminder -->
+<text x="300" y="150" fill="#94a3b8" font-size="10" text-anchor="middle">Splitting: n+1 rule — n neighbors → n+1 lines (singlet, doublet, triplet, quartet...)</text>
+</svg></div>
 <h3>4. Putting it all together</h3><p>Real structure problems give you molecular formula + IR + MS + NMR all at once. The strategy: (1) Use the molecular formula to calculate degree of unsaturation. (2) Use IR to identify functional groups. (3) Use NMR signal count and integration to deduce H environments. (4) Use NMR splitting to figure out which carbons are adjacent. (5) Assemble the puzzle.</p>`,
 quiz:[
 {q:"A strong, very broad IR absorption from 2500–3100 cm⁻¹ indicates:",opts:["alcohol","alkene","carboxylic acid","amine"],correct:2,explain:"Step 1: Recognize the diagnostic shape. Alcohols give a broad O–H but it sits higher (3200–3650) and is moderately broad. Step 2: Carboxylic acid O–H is at LOWER frequency (around 2500–3100) AND extends much wider — it overlaps with the C–H region. This 'rolling hill' shape from ~3100 down to 2500 is unmistakable. Step 3: The reason it's so broad: COOH groups are strongly hydrogen-bonded into dimers, which spreads the O–H stretch over a huge range."},
