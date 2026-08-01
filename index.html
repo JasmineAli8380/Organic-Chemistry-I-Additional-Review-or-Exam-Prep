@@ -638,7 +638,80 @@ body:`<h3>The big picture</h3><p>An alkyl halide (R–X where X = Cl, Br, I) has
 <h3>4. Stereochemistry — the killer detail</h3><div class="concept"><b>SN2:</b> backside attack → complete <b>inversion</b> of configuration (Walden inversion). (R) → (S) cleanly.<br><b>SN1:</b> goes through flat carbocation → nucleophile attacks either face equally → <b>racemization</b> (50:50 mix).<br><b>E2:</b> requires <b>anti-periplanar</b> H and leaving group (180° apart). On cyclohexanes, this means both must be axial in the same chair.<br><b>E1:</b> mixture of E and Z, usually favors more substituted (Zaitsev) alkene.</div>
 <h3>5. Zaitsev vs Hofmann — which alkene forms?</h3><div class="concept"><b>Zaitsev's rule (default):</b> the more substituted alkene is more stable and forms preferentially. Most E2 reactions with normal bases give Zaitsev.<br><b>Hofmann (exception):</b> when the base is BULKY (KOtBu, LDA), it can't reach the more hindered β-H, so it grabs the more accessible one — giving the LESS substituted alkene.</div>
 <div class="example"><b>Worked example:</b> 2-bromo-2-methylbutane + KOtBu.<br>Substrate: 3° → no SN2. KOtBu = strong, BULKY base → E2 dominates. Two β-carbons available: one CH₃ (3 H's, less hindered) and one CH₂CH₃ (2 H's, more hindered).<br>Bulky base prefers the less hindered CH₃. Result: 2-methyl-but-1-ene (Hofmann product, terminal alkene), NOT 2-methyl-but-2-ene (Zaitsev).</div>
-<h3>6. The decision tree</h3><div class="concept"><ol><li><b>Substrate?</b> Methyl/1° → SN2 or E2 only. 3° → SN1/E1 or E2 only. 2° → keep reading.</li><li><b>Nucleophile/base?</b> Strong Nu, weak base → SN2. Strong base (small) → E2 (Zaitsev). Strong base (bulky) → E2 (Hofmann). Weak/neutral → SN1 + E1.</li><li><b>Solvent?</b> Polar aprotic → boosts SN2. Polar protic → boosts SN1/E1.</li><li><b>Heat?</b> Pushes any reaction toward elimination over substitution.</li></ol></div>`,
+<h3>6. The decision tree</h3><div class="concept"><ol><li><b>Substrate?</b> Methyl/1° → SN2 or E2 only. 3° → SN1/E1 or E2 only. 2° → keep reading.</li><li><b>Nucleophile/base?</b> Strong Nu, weak base → SN2. Strong base (small) → E2 (Zaitsev). Strong base (bulky) → E2 (Hofmann). Weak/neutral → SN1 + E1.</li><li><b>Solvent?</b> Polar aprotic → boosts SN2. Polar protic → boosts SN1/E1.</li><li><b>Heat?</b> Pushes any reaction toward elimination over substitution.</li></ol>
+<svg viewBox="0 0 580 340" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:580px">
+<text x="290" y="18" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">SN1 / SN2 / E1 / E2 Decision Flowchart</text>
+<!-- Start box -->
+<rect x="195" y="28" width="190" height="30" rx="6" fill="rgba(94,234,212,0.1)" stroke="#5eead4" stroke-width="1.5"/>
+<text x="290" y="48" fill="#5eead4" font-size="11" font-weight="700" text-anchor="middle">What is the substrate?</text>
+<!-- Three branches -->
+<line x1="230" y1="58" x2="100" y2="85" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="290" y1="58" x2="290" y2="85" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="350" y1="58" x2="480" y2="85" stroke="#94a3b8" stroke-width="1.5"/>
+<!-- Methyl/1° -->
+<rect x="30" y="85" width="140" height="28" rx="6" fill="rgba(96,165,250,0.1)" stroke="#60a5fa" stroke-width="1.5"/>
+<text x="100" y="103" fill="#60a5fa" font-size="11" font-weight="600" text-anchor="middle">Methyl or 1°</text>
+<line x1="100" y1="113" x2="100" y2="135" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="20" y="135" width="160" height="24" rx="4" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="100" y="151" fill="#5eead4" font-size="10" text-anchor="middle">Nu/base strength?</text>
+<!-- Methyl/1° branches -->
+<line x1="60" y1="159" x2="60" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<line x1="140" y1="159" x2="140" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<rect x="10" y="180" width="100" height="42" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1.5"/>
+<text x="60" y="196" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">SN2</text>
+<text x="60" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">strong Nu, weak base</text>
+<text x="60" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">polar aprotic solvent</text>
+<rect x="115" y="180" width="55" height="42" rx="6" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="142" y="196" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">E2</text>
+<text x="142" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">strong</text>
+<text x="142" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">base</text>
+<!-- 2° -->
+<rect x="215" y="85" width="150" height="28" rx="6" fill="rgba(251,191,36,0.1)" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="290" y="103" fill="#fbbf24" font-size="11" font-weight="600" text-anchor="middle">2° (borderline)</text>
+<line x1="290" y1="113" x2="290" y2="135" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="210" y="135" width="160" height="24" rx="4" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="290" y="151" fill="#5eead4" font-size="10" text-anchor="middle">Nu/base strength?</text>
+<line x1="245" y1="159" x2="225" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<line x1="290" y1="159" x2="290" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<line x1="335" y1="159" x2="355" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<rect x="188" y="180" width="68" height="42" rx="6" fill="rgba(16,185,129,0.12)" stroke="#10b981" stroke-width="1.5"/>
+<text x="222" y="196" fill="#10b981" font-size="10" font-weight="700" text-anchor="middle">SN2</text>
+<text x="222" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">strong Nu</text>
+<text x="222" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">aprotic</text>
+<rect x="260" y="180" width="60" height="42" rx="6" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="290" y="196" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">E2</text>
+<text x="290" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">strong</text>
+<text x="290" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">base</text>
+<rect x="325" y="180" width="68" height="42" rx="6" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="359" y="196" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">SN1/E1</text>
+<text x="359" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">weak Nu</text>
+<text x="359" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">protic</text>
+<!-- 3° -->
+<rect x="410" y="85" width="140" height="28" rx="6" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="480" y="103" fill="#ef4444" font-size="11" font-weight="600" text-anchor="middle">3°</text>
+<line x1="480" y1="113" x2="480" y2="135" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="400" y="135" width="160" height="24" rx="4" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="480" y="151" fill="#5eead4" font-size="10" text-anchor="middle">Nu/base strength?</text>
+<line x1="440" y1="159" x2="440" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<line x1="520" y1="159" x2="520" y2="180" stroke="#94a3b8" stroke-width="1"/>
+<rect x="405" y="180" width="70" height="42" rx="6" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="1.5"/>
+<text x="440" y="196" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">E2</text>
+<text x="440" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">strong base</text>
+<rect x="485" y="180" width="70" height="42" rx="6" fill="rgba(239,68,68,0.12)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="520" y="196" fill="#ef4444" font-size="10" font-weight="700" text-anchor="middle">SN1/E1</text>
+<text x="520" y="210" fill="#94a3b8" font-size="8" text-anchor="middle">weak Nu</text>
+<text x="520" y="218" fill="#94a3b8" font-size="8" text-anchor="middle">protic</text>
+<!-- Stereochem summary bar -->
+<rect x="40" y="240" width="500" height="50" rx="8" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1"/>
+<text x="290" y="258" fill="#5eead4" font-size="11" font-weight="700" text-anchor="middle">Stereochemistry Cheat Sheet</text>
+<text x="120" y="278" fill="#10b981" font-size="10" text-anchor="middle">SN2: inversion</text>
+<text x="250" y="278" fill="#ef4444" font-size="10" text-anchor="middle">SN1: racemization</text>
+<text x="380" y="278" fill="#a78bfa" font-size="10" text-anchor="middle">E2: anti-periplanar</text>
+<text x="490" y="278" fill="#fbbf24" font-size="10" text-anchor="middle">E1: Zaitsev</text>
+<!-- No SN2 on 3° reminder -->
+<rect x="130" y="300" width="320" height="28" rx="6" fill="rgba(239,68,68,0.1)" stroke="#ef4444" stroke-width="1"/>
+<text x="290" y="318" fill="#ef4444" font-size="11" font-weight="600" text-anchor="middle">SN2 NEVER happens on 3° — too crowded!</text>
+</svg></div>`,
 quiz:[
 {q:"(R)-2-bromobutane reacts with NaI in acetone. The product is:",opts:["(R)-2-iodobutane","(S)-2-iodobutane","racemic 2-iodobutane","2-butene"],correct:1,explain:"Step 1: Substrate is 2°. Nucleophile is I⁻ (strong, weak base). Solvent is acetone (polar aprotic — boosts SN2). Step 2: All conditions point to SN2. Step 3: SN2 = backside attack = complete inversion of configuration. Starting material is (R) → product is (S). The Finkelstein reaction (NaI in acetone) is the textbook SN2 example."},
 {q:"Tert-butyl bromide (CH₃)₃CBr is heated in water. What happens?",opts:["SN2 substitution","SN1 substitution","E2 elimination","no reaction"],correct:1,explain:"Step 1: Substrate is 3° — too crowded for SN2 (would never happen). Step 2: Water is the nucleophile and solvent — neutral, weak nucleophile, polar protic. Step 3: 3° + weak Nu + polar protic = textbook SN1. The C–Br ionizes to form a stable 3° cation, then water attacks, then a proton is lost → product is tert-butyl alcohol. Some E1 may also occur (giving isobutylene), but SN1 typically dominates with neutral water."},
@@ -769,7 +842,52 @@ body:`<h3>Why benzene does substitution, not addition</h3><p>Alkenes do addition
 <tr><td>–F, –Cl, –Br, –I</td><td><b>deactivator BUT o,p-director</b></td><td>ortho/para</td></tr>
 <tr><td>–CHO, –COR, –CO₂R, –CO₂H, –CONR₂</td><td>moderate deactivator</td><td>meta</td></tr>
 <tr><td>–SO₃H, –CN, –NO₂, –NR₃⁺</td><td>strong deactivator</td><td>meta</td></tr></table>
-<div class="tip">⭐ <b>Memorize one weird rule:</b> Halogens are the only group that DEACTIVATE the ring but still direct ORTHO/PARA. Reason: their electronegativity withdraws electrons inductively (deactivation), but their lone pairs donate by resonance specifically to ortho/para positions (directing).</div>
+<div class="tip">⭐ <b>Memorize one weird rule:</b> Halogens are the only group that DEACTIVATE the ring but still direct ORTHO/PARA. Reason: their electronegativity withdraws electrons inductively (deactivation), but their lone pairs donate by resonance specifically to ortho/para positions (directing).
+<svg viewBox="0 0 580 210" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:16px auto;max-width:580px">
+<text x="290" y="18" fill="#5eead4" font-size="13" font-weight="700" text-anchor="middle">EAS Directing Effects — Visual Summary</text>
+<!-- Activating / o,p column -->
+<rect x="10" y="30" width="190" height="170" rx="8" fill="rgba(16,185,129,0.06)" stroke="#10b981" stroke-width="1.5"/>
+<text x="105" y="48" fill="#10b981" font-size="12" font-weight="700" text-anchor="middle">ACTIVATING</text>
+<text x="105" y="62" fill="#10b981" font-size="10" text-anchor="middle">ortho/para directors</text>
+<text x="105" y="82" fill="#e2e8f0" font-size="10" text-anchor="middle">–NH₂, –NHR, –NR₂ (strong)</text>
+<text x="105" y="98" fill="#e2e8f0" font-size="10" text-anchor="middle">–OH, –OR (strong)</text>
+<text x="105" y="114" fill="#e2e8f0" font-size="10" text-anchor="middle">–NHCOR (moderate)</text>
+<text x="105" y="130" fill="#e2e8f0" font-size="10" text-anchor="middle">–alkyl, –Ph (weak)</text>
+<!-- Benzene ring with o,p marked -->
+<polygon points="105,150 125,157 125,173 105,180 85,173 85,157" fill="none" stroke="#10b981" stroke-width="1.5"/>
+<circle cx="105" cy="165" r="8" fill="none" stroke="#10b981" stroke-width="0.8"/>
+<circle cx="125" cy="157" r="3" fill="#10b981"/>
+<circle cx="85" cy="157" r="3" fill="#10b981"/>
+<circle cx="105" cy="180" r="3" fill="#10b981"/>
+<text x="140" y="155" fill="#10b981" font-size="7">o</text>
+<text x="68" y="155" fill="#10b981" font-size="7">o</text>
+<text x="105" y="196" fill="#10b981" font-size="7" text-anchor="middle">p</text>
+<!-- Halogen exception column -->
+<rect x="210" y="30" width="160" height="170" rx="8" fill="rgba(251,191,36,0.06)" stroke="#fbbf24" stroke-width="1.5"/>
+<text x="290" y="48" fill="#fbbf24" font-size="12" font-weight="700" text-anchor="middle">EXCEPTION</text>
+<text x="290" y="62" fill="#fbbf24" font-size="10" text-anchor="middle">deactivating BUT o,p</text>
+<text x="290" y="88" fill="#e2e8f0" font-size="11" font-weight="600" text-anchor="middle">–F, –Cl, –Br, –I</text>
+<text x="290" y="110" fill="#94a3b8" font-size="9" text-anchor="middle">inductive: withdraws (slower)</text>
+<text x="290" y="125" fill="#94a3b8" font-size="9" text-anchor="middle">resonance: donates to o/p</text>
+<polygon points="290,145 310,152 310,168 290,175 270,168 270,152" fill="none" stroke="#fbbf24" stroke-width="1.5"/>
+<circle cx="290" cy="160" r="8" fill="none" stroke="#fbbf24" stroke-width="0.8"/>
+<text x="290" y="196" fill="#fbbf24" font-size="8" text-anchor="middle">still o,p!</text>
+<!-- Deactivating / meta column -->
+<rect x="380" y="30" width="190" height="170" rx="8" fill="rgba(239,68,68,0.06)" stroke="#ef4444" stroke-width="1.5"/>
+<text x="475" y="48" fill="#ef4444" font-size="12" font-weight="700" text-anchor="middle">DEACTIVATING</text>
+<text x="475" y="62" fill="#ef4444" font-size="10" text-anchor="middle">meta directors</text>
+<text x="475" y="82" fill="#e2e8f0" font-size="10" text-anchor="middle">–NO₂, –NR₃⁺ (strong)</text>
+<text x="475" y="98" fill="#e2e8f0" font-size="10" text-anchor="middle">–CN, –SO₃H (strong)</text>
+<text x="475" y="114" fill="#e2e8f0" font-size="10" text-anchor="middle">–CHO, –COR (moderate)</text>
+<text x="475" y="130" fill="#e2e8f0" font-size="10" text-anchor="middle">–CO₂R, –CO₂H (moderate)</text>
+<!-- Benzene ring with meta marked -->
+<polygon points="475,150 495,157 495,173 475,180 455,173 455,157" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+<circle cx="475" cy="165" r="8" fill="none" stroke="#ef4444" stroke-width="0.8"/>
+<circle cx="495" cy="173" r="3" fill="#ef4444"/>
+<circle cx="455" cy="173" r="3" fill="#ef4444"/>
+<text x="505" y="178" fill="#ef4444" font-size="7">m</text>
+<text x="443" y="178" fill="#ef4444" font-size="7">m</text>
+</svg></div>
 <h3>4. Why directing effects work — resonance logic</h3><p>To predict where a new group goes, draw the arenium ion intermediate for each possible attack position (ortho, meta, para) and see which one is most stabilized by the existing group. The group that wins gives the lowest-energy intermediate → fastest pathway → major product.</p>
 <div class="example"><b>Ortho/para directors:</b> An EDG like –OCH₃ donates electrons through resonance. When the new electrophile attacks ortho or para, the positive charge in the intermediate ends up on a carbon adjacent to the OCH₃, which can donate a lone pair to neutralize it. Meta attack gives an intermediate where the positive charge cannot reach the OCH₃ at all. So ortho/para intermediates are stabilized → ortho/para products dominate.<br><br><b>Meta directors:</b> An EWG like –NO₂ pulls electrons. Ortho/para attack would put positive charge ADJACENT to the already-positive nitro group — destabilized. Meta attack avoids this. So meta wins by elimination of the worse alternatives.</div>
 <h3>5. Synthesis strategy: order matters!</h3><p>When building disubstituted benzenes, the order of installation determines what's possible. If you want para-bromonitrobenzene, install bromine FIRST (an o,p-director), then nitrate (Br directs to para). If you nitrated first, NO₂ would direct meta and you couldn't get the para isomer.</p>
